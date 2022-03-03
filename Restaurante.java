@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Restaurante {
 
@@ -12,7 +13,7 @@ public class Restaurante {
     private String telefono;
     private String correo;
 
-    public Repartidor(){
+    public Restaurante(){
     }
 
     public Restaurante(String nombre, String domicilio, String rfc, String horario, boolean estaAbierto, int tipo, String descripcion, String sitioWeb, String telefono, String correo) {
@@ -28,7 +29,34 @@ public class Restaurante {
         this.correo = correo;
     }
 
+    public void mostrar(){
+      System.out.println(" - - - - Mostrar Restaurante - - - - ");
+      System.out.println("Nombre          : " + nombre);
+      System.out.println("Domicilio       : " + domicilio);
+      System.out.println("RFC             : " + rfc);
+      System.out.println("Horario         : " + horario);
+      System.out.println("Esta abierto?   : " + estaAbierto);
+      System.out.println("Tipo            : " + tipo);
+      System.out.println("Descripcion     : " + descripcion);
+      System.out.println("Sitio Web       : " + sitioWeb);
+      System.out.println("Telefono        : " + telefono);
+      System.out.println("Correo          : " + correo);
+    }
 
+    public void capturar(){
+      Scanner read = new Scanner(System.in);
+      System.out.println(" - - - - Mostrar Restaurante - - - - ");
+      System.out.print("Nombre          : "); nombre = read.nextLine();
+      System.out.print("Domicilio       : "); domicilio = read.nextLine();
+      System.out.print("RFC             : "); rfc = read.nextLine();
+      System.out.print("Horario         : "); horario = read.nextLine();
+      System.out.print("Esta abierto?   : "); estaAbierto = read.nextBoolean();
+      System.out.print("Tipo            : "); tipo = read.nextInt();
+      System.out.print("Descripcion     : "); descripcion = read.nextLine();
+      System.out.print("Sitio Web       : "); sitioWeb = read.nextLine();
+      System.out.print("Telefono        : "); telefono = read.nextLine();
+      System.out.print("Correo          : "); correo = read.nextLine();
+    }
 
     public String getNombre() {
         return nombre;

@@ -22,6 +22,12 @@ public class App {
                 case 22:
                     uberEats.capturarCliente();
                     break;
+                case 31:
+                    uberEats.mostrarRestaurantes();
+                    break;
+                case 32:
+                    uberEats.capturarRestaurante();
+                    break;
                 case 0:
                     return;
             }

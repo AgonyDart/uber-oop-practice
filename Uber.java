@@ -7,8 +7,10 @@ public class Uber {
     private String correo;
     private Repartidor repartidores[] = new Repartidor[1000];
     private Cliente clientes[] = new Cliente[1000];
+    private Restaurante restaurantes[] = new Restaurante[1000];
     private int cRepartidores;
     private int cClientes;
+    private int cRestaurantes;
 
     public Uber(String rfc, String telefono, String paginaWeb, String correo) {
         this.rfc = rfc;
@@ -41,6 +43,8 @@ public class Uber {
         clientes[8] = new Cliente("Sarai Lemus", "Corregidora #234", "443 567 6456", "sarailemus@gmail.com", 'F', "01-03-13", 200, "Tarimbaro", "58XXX");
         clientes[9] = new Cliente("Damian Hernandez", "Villa magna #763", "43 127 4567", "damianhc@gmail.com", 'M', "03-03-11", 1500, "Morelia", "58337");
         cClientes = 10;
+        restaurante[0] = new Restaurante("McDonalds", "Villa Siempreviva, #123", "MCDS030322-xxx", "11:00-9:00", true, 1, "hamburguesas", "www.mcdonalds.com", "123456789", "uncorreo@gmail.com");
+        cRestaurantes = 1;
     }
 
     public void mostrarRepartidores() {
@@ -69,6 +73,20 @@ public class Uber {
         clientes[cClientes] = new Cliente();
         clientes[cClientes].capturar();
         cClientes++;
+    }
+
+    public void mostrarRestaurantes() {
+        for (int i = 0; i <= cRestaurantes; i++) {
+            if (restaurantes[i] != null) {
+                restaurantes[i].mostrar();
+            }
+        }
+    }
+
+    public void capturarRestaurante() {
+        restaurantes[cRestaurantes] = new Restaurante();
+        restaurantes[cRestaurantes].capturar();
+        cRestaurantes++;
     }
 
     public String getRfc() {

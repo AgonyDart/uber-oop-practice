@@ -8,11 +8,11 @@ public class Alimento {
   private boolean estaDisponible;
   private int tipo;
 
-  public Restaurante(){
+  public Alimento(){
 
   }
 
-  public Restaurante(String nombre, float precio, String descripcion, int tiempo, boolean estaDisponible, int tipo){
+  public Alimento(String nombre, float precio, String descripcion, int tiempo, boolean estaDisponible, int tipo){
     this.nombre = nombre;
     this.precio = precio;
     this.descripcion = descripcion;
@@ -32,20 +32,62 @@ public class Alimento {
   }
 
   public void capturar(){
+    System.out.print(" - - - - Capturar Alimento - - - - ");
     Scanner read = new Scanner(System.in);
-    System.out.println("Nombre : ");
-    nombre = read.nextLine();
-    System.out.println("Precio : ");
-    precio = read.nextfloat();
-    System.out.println("Descripcion : ");
-    descripcion = read.nextLine();
-    System.out.println("Tiempo : ");
-    tiempo = read.nextInt();
-    System.out.println("Esta Disponible? : ");
-    estaDisponible = read.nextBoolean();
-    System.out.println("Tipo : ");
-    tipo = read.nextInt();
+    System.out.print("Nombre            : "); nombre = read.nextLine();
+    System.out.print("Precio            : "); precio = read.nextFloat();
+    System.out.print("Descripcion       : "); descripcion = read.nextLine();
+    System.out.print("Tiempo            : "); tiempo = read.nextInt();
+    System.out.print("Esta Disponible?  : "); estaDisponible = read.nextBoolean();
+    System.out.print("Tipo              : "); tipo = read.nextInt();
   }
-//encapsulamiento
+
+  public String getNombre() {
+       return nombre;
+   }
+
+   public void setNombre(String nombre) {
+       this.nombre = nombre;
+   }
+
+   public float getPrecio() {
+       return precio;
+   }
+
+   public void setPrecio(float precio) {
+       this.precio = precio;
+   }
+
+   public String getDescripcion() {
+       return descripcion;
+   }
+
+   public void setDescripcion(String descripcion) {
+       this.descripcion = descripcion;
+   }
+
+   public int getTiempo() {
+       return tiempo;
+   }
+
+   public void setTiempo(int tiempo) {
+       this.tiempo = tiempo;
+   }
+
+   public boolean isEstaDisponible() {
+       return estaDisponible;
+   }
+
+   public void setEstaDisponible(boolean estaDisponible) {
+       this.estaDisponible = estaDisponible;
+   }
+
+   public int getTipo() {
+       return tipo;
+   }
+
+   public void setTipo(int tipo) {
+       this.tipo = tipo;
+   }
 
 }
