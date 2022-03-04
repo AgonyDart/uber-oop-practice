@@ -62,6 +62,7 @@ public class Cliente {
         municipio = read.nextLine();
         System.out.println("Codigo Postal        : ");
         codigoPostal = read.nextLine();
+        read.close();
     }
 
     public String getNombreCompleto() {

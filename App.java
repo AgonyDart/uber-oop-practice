@@ -35,14 +35,14 @@ public class App {
     }
 
     public static int mostrarMenu() {
-        Scanner dato = new Scanner(System.in);
+        Scanner read = new Scanner(System.in);
         System.out.println("1.- Repartidor         2.-Cliente       3.-Restaurante   0.-Salir");
-        int opcion = dato.nextInt();
+        int opcion = read.nextInt();
         if (opcion == 0) {
             return opcion;
         }
         System.out.println("1.- Mostrar          2.- Capturar      3.-Cancelar");
-        opcion = opcion * 10 + dato.nextInt();
+        opcion = opcion * 10 + read.nextInt();
         return opcion;
     }
 }

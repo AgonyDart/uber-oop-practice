@@ -43,7 +43,7 @@ public class Uber {
         clientes[8] = new Cliente("Sarai Lemus", "Corregidora #234", "443 567 6456", "sarailemus@gmail.com", 'F', "01-03-13", 200, "Tarimbaro", "58XXX");
         clientes[9] = new Cliente("Damian Hernandez", "Villa magna #763", "43 127 4567", "damianhc@gmail.com", 'M', "03-03-11", 1500, "Morelia", "58337");
         cClientes = 10;
-        restaurante[0] = new Restaurante("McDonalds", "Villa Siempreviva, #123", "MCDS030322-xxx", "11:00-9:00", true, 1, "hamburguesas", "www.mcdonalds.com", "123456789", "uncorreo@gmail.com");
+        restaurantes[0] = new Restaurante("McDonalds", "Villa Siempreviva, #123", "MCDS030322-xxx", "11:00-9:00", true, 1, "hamburguesas", "www.mcdonalds.com", "123456789", "uncorreo@gmail.com");
         cRestaurantes = 1;
     }
 

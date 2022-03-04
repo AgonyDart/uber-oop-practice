@@ -80,6 +80,7 @@ public class Repartidor {
         sexo = read.nextLine().charAt(0);
         System.out.print("¿Disponible?         : ");
         estaDisponible = read.nextBoolean();
+        read.close();
     }
 
     public String getTelefono() {

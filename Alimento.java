@@ -40,6 +40,7 @@ public class Alimento {
     System.out.print("Tiempo            : "); tiempo = read.nextInt();
     System.out.print("Esta Disponible?  : "); estaDisponible = read.nextBoolean();
     System.out.print("Tipo              : "); tipo = read.nextInt();
+    read.close();
   }
 
   public String getNombre() {

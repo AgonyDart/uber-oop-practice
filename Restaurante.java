@@ -12,6 +12,8 @@ public class Restaurante {
     private String sitioWeb;
     private String telefono;
     private String correo;
+    private Alimento alimentos[] = new Alimento[1000];
+    private int cAlimentos;
 
     public Restaurante(){
     }
@@ -27,8 +29,17 @@ public class Restaurante {
         this.sitioWeb = sitioWeb;
         this.telefono = telefono;
         this.correo = correo;
+        inicializarDatos();
     }
 
+    private void inicializarDatos(){
+        alimentos[0] = new Alimento("Comida 1", 200, "te lo puedes comer", 30, true, 3);
+        alimentos[1] = new Alimento("Comida 2", 200, "te lo puedes comer", 30, true, 3);
+        alimentos[2] = new Alimento("Comida 3", 200, "te lo puedes comer", 30, true, 3);
+        alimentos[3] = new Alimento("Comida 4", 200, "te lo puedes comer", 30, true, 3);
+        alimentos[4] = new Alimento("Comida 5", 200, "te lo puedes comer", 30, true, 3);
+        cAlimentos = 5;
+    }
     public void mostrar(){
       System.out.println(" - - - - Mostrar Restaurante - - - - ");
       System.out.println("Nombre          : " + nombre);
@@ -41,6 +52,8 @@ public class Restaurante {
       System.out.println("Sitio Web       : " + sitioWeb);
       System.out.println("Telefono        : " + telefono);
       System.out.println("Correo          : " + correo);
+      System.out.println("Menu            : ");
+      mostrarAlimentos();
     }
 
     public void capturar(){
@@ -56,6 +69,15 @@ public class Restaurante {
       System.out.print("Sitio Web       : "); sitioWeb = read.nextLine();
       System.out.print("Telefono        : "); telefono = read.nextLine();
       System.out.print("Correo          : "); correo = read.nextLine();
+      read.close();
+    }
+
+    public void mostrarAlimentos(){
+        for (int i = 0; i <= cAlimentos; i++) {
+            if (alimentos[i] != null) {
+                alimentos[i].mostrar();
+            }
+        }
     }
 
     public String getNombre() {
