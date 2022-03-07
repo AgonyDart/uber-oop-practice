@@ -1,3 +1,4 @@
+import java.util.Scanner;
 
 public class Uber {
 
@@ -43,16 +44,39 @@ public class Uber {
         clientes[8] = new Cliente("Sarai Lemus", "Corregidora #234", "443 567 6456", "sarailemus@gmail.com", 'F', "01-03-13", 200, "Tarimbaro", "58XXX");
         clientes[9] = new Cliente("Damian Hernandez", "Villa magna #763", "43 127 4567", "damianhc@gmail.com", 'M', "03-03-11", 1500, "Morelia", "58337");
         cClientes = 10;
-        restaurantes[0] = new Restaurante("McDonalds", "Villa Siempreviva, #123", "MCDS030322-xxx", "11:00-9:00", true, 1, "hamburguesas", "www.mcdonalds.com", "123456789", "uncorreo@gmail.com");
+        // restaurante[0] = new Restaurante("McDonalds", "Villa Siempreviva, #123", "MCDS030322-xxx", "11:00-9:00", true, 1, "hamburguesas", "www.mcdonalds.com", "123456789", "uncorreo@gmail.com");
         cRestaurantes = 1;
     }
 
     public void mostrarRepartidores() {
-        for (int i = 0; i <= cRepartidores; i++) {
-            if (repartidores[i] != null) {
-                repartidores[i].mostrar();
-            }
+        for (int i = 0; i < cRepartidores; i++) {
+          repartidores[i].mostrar();
         }
+    }
+
+    public void mostrarRepartidores(String string) {
+      String textForSearching;
+      Repartidor r;
+      for (int i = 0; i < cRepartidores; i++) {
+        r = repartidores[i];
+        textForSearching = r.getNombreCompleto() + r.getTelefono() + r.getRfc() + r.getCorreo() + r.getNumeroLicencia() + r.getDescripcionVehiculo() + r.getDomicilio() + r.getCuentaBancaria() + r.getFechaNacimiento();
+        if (textForSearching.contains(string)) {
+          repartidores[i].mostrar();
+        }
+        textForSearching = "";
+      }
+    }
+
+    public void mostrarRepartidores(int lines) {
+      Scanner read = new Scanner(System.in);
+      for (int i = 0; i < cRepartidores;) {
+        for (int j = 0; j < lines; j++) {
+          repartidores[i].mostrar();
+          i++;
+        }
+        System.out.print("Presione 'Enter' para continuar : ");
+        read.nextLine();
+      }
     }
 
     public void capturarRepartidor() {
