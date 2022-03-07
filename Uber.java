@@ -50,7 +50,9 @@ public class Uber {
 
     public void mostrarRepartidores() {
         for (int i = 0; i < cRepartidores; i++) {
-          repartidores[i].mostrar();
+          if (repartidores[i] != null) {
+            repartidores[i].mostrar();
+          }
         }
     }
 
@@ -74,7 +76,7 @@ public class Uber {
           repartidores[i].mostrar();
           i++;
         }
-        System.out.print("Presione 'Enter' para continuar : ");
+        System.out.print("\nPresione 'Enter' para continuar : ");
         read.nextLine();
       }
     }

@@ -6,6 +6,7 @@ public class App {
     public static void main(String[] args) {
         int opcion;
         Scanner read = new Scanner(System.in);
+        String search;
         Uber uberEats = new Uber("UPM974734", "helpuber.com.mx", "Uber.com", "4432947201");
         // imprime todos los repartidores y lineas, indica cuantos a la vez (hacer un limite de datos);
 
@@ -19,8 +20,13 @@ public class App {
                     uberEats.capturarRepartidor();
                     break;
                 case 13:
-                    System.out.println("\nIntroduce la cadena de texto a buscar : ");
-                    uberEats.mostrarRepartidores(read.nextInt());
+                    System.out.println("Introduce la cadena de texto a buscar, o el numero de repartidores : ");
+                    search = read.nextLine();
+                    if (isNumeric(search)) {
+                      uberEats.mostrarRepartidores(Integer.parseInt(search));
+                    } else {
+                      uberEats.mostrarRepartidores(search);
+                    }
                     break;
                 case 21:
                     uberEats.mostrarClientes();
@@ -50,5 +56,14 @@ public class App {
         System.out.println("1.- Mostrar          2.- Capturar      3. Buscar       0.-Cancelar");
         opcion = opcion * 10 + read.nextInt();
         return opcion;
+    }
+
+    private static boolean isNumeric(String string){
+    	try {
+    		Integer.parseInt(string);
+    		return true;
+    	} catch (NumberFormatException nfe){
+    		return false;
+    	}
     }
 }
