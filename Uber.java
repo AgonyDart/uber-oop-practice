@@ -120,5 +120,4 @@ public class Uber {
     public void setCorreo(String correo) {
         this.correo = correo;
     }
-
 }

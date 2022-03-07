@@ -58,7 +58,7 @@ public class Restaurante {
 
     public void capturar(){
       Scanner read = new Scanner(System.in);
-      System.out.println(" - - - - Mostrar Restaurante - - - - ");
+      System.out.println(" - - - - Capturar Restaurante - - - - ");
       System.out.print("Nombre          : "); nombre = read.nextLine();
       System.out.print("Domicilio       : "); domicilio = read.nextLine();
       System.out.print("RFC             : "); rfc = read.nextLine();

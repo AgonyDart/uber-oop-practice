@@ -28,6 +28,8 @@ public class App {
                 case 32:
                     uberEats.capturarRestaurante();
                     break;
+                case 34:
+                    //
                 case 0:
                     return;
             }
@@ -35,14 +37,20 @@ public class App {
     }
 
     public static int mostrarMenu() {
-        Scanner read = new Scanner(System.in);
-        System.out.println("1.- Repartidor         2.-Cliente       3.-Restaurante   0.-Salir");
-        int opcion = read.nextInt();
-        if (opcion == 0) {
-            return opcion;
+        try (Scanner read = new Scanner(System.in)) {
+            System.out.println("1.- Repartidor         2.-Cliente       3.-Restaurante   0.-Salir");
+            int opcion = read.nextInt();
+            if (opcion == 0) {
+                return opcion;
+            } else if (opcion == 3) {
+                System.out.println("1. Mostrar Restaurante  2. Capturar Restaurante     3. Mostrar Alimento     4. Capturar Alimento");
+                opcion = opcion * 10 + read.nextInt();
+                return opcion;
+            } else {
+                System.out.println("1.- Mostrar          2.- Capturar      3.-Cancelar");
+                opcion = opcion * 10 + read.nextInt();
+                return opcion;
+            }
         }
-        System.out.println("1.- Mostrar          2.- Capturar      3.-Cancelar");
-        opcion = opcion * 10 + read.nextInt();
-        return opcion;
     }
 }
