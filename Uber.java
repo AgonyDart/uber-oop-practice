@@ -70,16 +70,17 @@ public class Uber {
     }
 
     public void mostrarRepartidores(int lines) {
-      try (Scanner read = new Scanner(System.in)) {
-		for (int i = 0; i < cRepartidores;) {
-		    for (int j = 0; j < lines; j++) {
-		      repartidores[i].mostrar();
-		      i++;
-		    }
-		    System.out.print("\nPresione 'Enter' para continuar : ");
-		    read.nextLine();
-		  }
-	}
+      Scanner read = new Scanner(System.in);
+  		for (int i = 0; i < cRepartidores;) {
+  		    for (int j = 0; j < lines; j++) {
+            if (repartidores[i] != null) {
+              repartidores[i].mostrar();
+              i++;
+            }
+  		    }
+  		    System.out.print("\nPresione 'Enter' para continuar : ");
+  		    read.nextLine();
+  		  }
     }
 
     public void capturarRepartidor() {
@@ -94,6 +95,33 @@ public class Uber {
                 clientes[i].mostrar();
             }
         }
+    }
+
+    public void mostrarClientes(String string) {
+      String textForSearching;
+      Cliente r;
+      for (int i = 0; i < cClientes; i++) {
+        r = clientes[i];
+        textForSearching = r.getNombreCompleto() + r.getTelefono() + r.getCorreo() + r.getDomicilio() + r.getSaldo() + r.getFechaNacimiento() + r.getMunicipio() + r.getCodigoPostal();
+        if (textForSearching.contains(string)) {
+          clientes[i].mostrar();
+        }
+        textForSearching = "";
+      }
+    }
+
+    public void mostrarClientes(int lines) {
+      Scanner read = new Scanner(System.in);
+  		for (int i = 0; i < cClientes;) {
+  		    for (int j = 0; j < lines; j++) {
+            if (clientes[i] != null) {
+              clientes[i].mostrar();
+              i++;
+            }
+  		    }
+  		    System.out.print("\nPresione 'Enter' para continuar : ");
+  		    read.nextLine();
+  		  }
     }
 
     public void capturarCliente() {

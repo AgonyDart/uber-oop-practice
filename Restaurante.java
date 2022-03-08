@@ -12,7 +12,8 @@ public class Restaurante {
     private String sitioWeb;
     private String telefono;
     private String correo;
-    private Alimento alimentos[] = new Alimento[1000];
+    private Alimento alimentos[] = new Alimento[15];
+    private Restaurante restaurantes[] = new Restaurante[1000];
     private int cAlimentos;
 
     public Restaurante(){
@@ -29,7 +30,7 @@ public class Restaurante {
         this.sitioWeb = sitioWeb;
         this.telefono = telefono;
         this.correo = correo;
-        inicializarDatos();
+        cAlimentos = 0;
     }
 
     private void inicializarDatos(){
@@ -40,6 +41,7 @@ public class Restaurante {
         alimentos[4] = new Alimento("Comida 5", 200, "te lo puedes comer", 30, true, 3);
         cAlimentos = 5;
     }
+
     public void mostrar(){
       System.out.println(" - - - - Mostrar Restaurante - - - - ");
       System.out.println("Nombre          : " + nombre);
@@ -53,7 +55,6 @@ public class Restaurante {
       System.out.println("Telefono        : " + telefono);
       System.out.println("Correo          : " + correo);
       System.out.println("Menu            : ");
-      mostrarAlimentos();
     }
 
     public void capturar(){
@@ -70,6 +71,10 @@ public class Restaurante {
       System.out.print("Telefono        : "); telefono = read.nextLine();
       System.out.print("Correo          : "); correo = read.nextLine();
       read.close();
+    }
+
+    public void agregarAlimento(String nombre, float precio, String descripcion, int tiempo, boolean estaDisponible, int tipo){
+      alimentos[cAlimentos++] = new Alimento(nombre, precio, descripcion, tiempo, estaDisponible, tipo);
     }
 
     public void mostrarAlimentos(){
