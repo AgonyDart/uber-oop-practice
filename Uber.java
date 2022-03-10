@@ -70,7 +70,7 @@ public class Uber {
     }
 
     public void mostrarRepartidores(int lines) {
-      try (Scanner read = new Scanner(System.in)) {
+        Scanner read = new Scanner(System.in);
 		for (int i = 0; i < cRepartidores;) {
 		    for (int j = 0; j < lines; j++) {
 		      repartidores[i].mostrar();
@@ -78,8 +78,7 @@ public class Uber {
 		    }
 		    System.out.print("\nPresione 'Enter' para continuar : ");
 		    read.nextLine();
-		  }
-	}
+        }
     }
 
     public void capturarRepartidor() {
