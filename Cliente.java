@@ -3,12 +3,6 @@ import java.util.Scanner;
 
 public class Cliente {
 
-    private String nombreCompleto;
-    private String domicilio;
-    private String telefono;
-    private String correo;
-    private char sexo;
-    private String fechaNacimiento;
     private double saldo;
     private String municipio;
     private String codigoPostal;
@@ -30,12 +24,6 @@ public class Cliente {
 
     public void mostrar() {
         System.out.println(" - - - - Mostrar Cliente - - - - ");
-        System.out.println("Nombre Completo      : " + nombreCompleto);
-        System.out.println("Domicilio            : " + domicilio);
-        System.out.println("Teléfono             : " + telefono);
-        System.out.println("Correo               : " + correo);
-        System.out.println("Sexo                 : " + sexo);
-        System.out.println("Fecha de Nacimiento  : " + fechaNacimiento);
         System.out.println("Saldo                : " + saldo);
         System.out.println("Municipio            : " + municipio);
         System.out.println("Codigo Postal        : " + codigoPostal);
@@ -44,18 +32,6 @@ public class Cliente {
     public void capturar() {
         Scanner read = new Scanner(System.in);
         System.out.println(" - - - - Capturar Cliente - - - - ");
-        System.out.println("Nombre Completo      : ");
-        nombreCompleto = read.nextLine();
-        System.out.println("Domicilio            : ");
-        domicilio = read.nextLine();
-        System.out.println("Teléfono             : ");
-        telefono = read.nextLine();
-        System.out.println("Correo               : ");
-        correo = read.nextLine();
-        System.out.println("Sexo                 : ");
-        sexo = read.nextLine().charAt(0);
-        System.out.println("Fecha de Nacimiento  : ");
-        fechaNacimiento = read.nextLine();
         System.out.println("Saldo                : ");
         saldo = read.nextDouble();
         System.out.println("Municipio            : ");

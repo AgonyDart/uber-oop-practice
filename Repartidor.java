@@ -3,17 +3,12 @@ import java.util.Scanner;
 
 public class Repartidor {
 
-    private String telefono;
-    private String nombreCompleto;
     private String rfc;
-    private String correo;
+
     private char tipoVehiculo;
     private String numeroLicencia;
     private String descripcionVehiculo;
-    private String domicilio;
     private String cuentaBancaria;
-    private String fechaNacimiento;
-    private char sexo;
     private boolean estaDisponible;
 
     public Repartidor(String telefono, String nombreCompleto, String rfc, String correo, char tipoVehiculo, String numeroLicencia, String descripcionVehiculo, String domicilio, String cuentaBancaria, String fechaNacimiento, char sexo, boolean estaDisponible) {
@@ -39,45 +34,27 @@ public class Repartidor {
 
     public void mostrar() {
         System.out.println(" - - - - Mostrar Repartidor - - - - ");
-        System.out.println("Nombre Completo      : " + nombreCompleto);
-        System.out.println("Teléfono             : " + telefono);
         System.out.println("RFC                  : " + rfc);
-        System.out.println("Correo               : " + correo);
         System.out.println("Tipo de Vehículo     : " + tipoVehiculo);
         System.out.println("Núm. de Licencia     : " + numeroLicencia);
         System.out.println("Vehículo             : " + descripcionVehiculo);
-        System.out.println("Domicilio            : " + domicilio);
         System.out.println("Cuenta Bancaria      : " + cuentaBancaria);
-        System.out.println("Fecha de Nacimiento  : " + fechaNacimiento);
-        System.out.println("Sexo                 : " + sexo);
         System.out.println("¿Disponible?         : " + estaDisponible);
     }
 
     public void capturar() {
         Scanner read = new Scanner(System.in);
         System.out.println(" - - - - Capturar Repartidor - - - - ");
-        System.out.print("Nombre Completo      : ");
-        nombreCompleto = read.nextLine();
-        System.out.print("Teléfono             : ");
-        telefono = read.nextLine();
         System.out.print("RFC                  : ");
         rfc = read.nextLine();
-        System.out.print("Correo               : ");
-        correo = read.nextLine();
         System.out.print("Tipo de Vehículo     : ");
         tipoVehiculo = read.nextLine().charAt(0);
         System.out.print("Núm. de Licencia     : ");
         numeroLicencia = read.nextLine();
         System.out.print("Vehículo             : ");
         descripcionVehiculo = read.nextLine();
-        System.out.print("Domicilio            : ");
-        domicilio = read.nextLine();
         System.out.print("Cuenta Bancaria      : ");
         cuentaBancaria = read.nextLine();
-        System.out.print("Fecha de Nacimiento  : ");
-        fechaNacimiento = read.nextLine();
-        System.out.print("Sexo                 : ");
-        sexo = read.nextLine().charAt(0);
         System.out.print("¿Disponible?         : ");
         estaDisponible = read.nextBoolean();
         read.close();
