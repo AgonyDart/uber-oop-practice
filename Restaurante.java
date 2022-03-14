@@ -13,7 +13,6 @@ public class Restaurante {
     private String telefono;
     private String correo;
     private Alimento alimentos[] = new Alimento[15];
-    private Restaurante restaurantes[] = new Restaurante[1000];
     private int cAlimentos;
 
     public Restaurante() {
@@ -79,7 +78,7 @@ public class Restaurante {
         alimentos[cAlimentos++] = new Alimento(nombre, precio, descripcion, tiempo, estaDisponible, tipo);
     }
 
-    public void mostrarAlimentos() {
+    public void mostrarAlimento() {
         for (int i = 0; i <= cAlimentos; i++) {
             if (alimentos[i] != null) {
                 alimentos[i].mostrar();

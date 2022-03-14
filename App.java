@@ -48,6 +48,12 @@ public class App {
 				case 32:
 					uberEats.capturarRestaurante();
 					break;
+				case 33:
+					uberEats.mostrarRestaurantes(read.nextLine());
+					break;
+				case 34:
+					uberEats.mostrarAlimentos();
+					break;
 				case 0:
 					return;
 			}
@@ -56,13 +62,18 @@ public class App {
 
 	public static int mostrarMenu() {
 		Scanner read = new Scanner(System.in);
-		System.out.println("1.- Repartidor         2.-Cliente       3.-Restaurante   0.-Salir");
+		System.out.println("1.- Repartidor		2.- Cliente		3.- Restaurante		0.- Salir");
 		int opcion = read.nextInt();
 		if (opcion == 0) {
 			return opcion;
 		}
-		System.out.println("1.- Mostrar          2.- Capturar      3. Buscar       0.-Cancelar");
-		opcion = opcion * 10 + read.nextInt();
+		if (opcion == 3) {
+			System.out.println("1.- Mostrar		2.- Capturar	     3.- Buscar		4.-Mostrar alimentos		0.- Cancelar");
+			opcion = opcion * 10 + read.nextInt();
+		} else {
+			System.out.println("1.- Mostrar		2.- Capturar		3. Buscar		0.-Cancelar");
+			opcion = opcion * 10 + read.nextInt();
+		}
 		if (opcion % 10 == 3) {
 			System.out.println("Introduce la cadena de texto a buscar, o el numero de lineas : ");
 		}

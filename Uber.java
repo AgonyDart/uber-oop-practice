@@ -180,10 +180,32 @@ public class Uber {
     }
   }
 
+  public void mostrarRestaurantes(String string) {
+    String textForSearching;
+    Restaurante r;
+    for (int i = 0; i < cRestaurantes; i++) {
+      r = restaurantes[i];
+      textForSearching = r.getNombre() + r.getTelefono() + r.getRfc() + r.getCorreo() + r.getHorario()
+          + r.getDescripcion() + r.getDomicilio() + r.getSitioWeb();
+      if (textForSearching.contains(string)) {
+        restaurantes[i].mostrar();
+      }
+      textForSearching = "";
+    }
+  }
+
   public void capturarRestaurante() {
     restaurantes[cRestaurantes] = new Restaurante();
     restaurantes[cRestaurantes].capturar();
     cRestaurantes++;
+  }
+
+  public void mostrarAlimentos() {
+    for (int i = 0; i <= cRestaurantes; i++) {
+      if (restaurantes[i] != null) {
+        restaurantes[i].mostrarAlimento();
+      }
+    }
   }
 
   public String getRfc() {
