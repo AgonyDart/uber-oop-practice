@@ -12,13 +12,15 @@ public class Restaurante {
     private String sitioWeb;
     private String telefono;
     private String correo;
-    private Alimento alimentos[] = new Alimento[1000];
+    private Alimento alimentos[] = new Alimento[15];
+    private Restaurante restaurantes[] = new Restaurante[1000];
     private int cAlimentos;
 
-    public Restaurante(){
+    public Restaurante() {
     }
 
-    public Restaurante(String nombre, String domicilio, String rfc, String horario, boolean estaAbierto, int tipo, String descripcion, String sitioWeb, String telefono, String correo) {
+    public Restaurante(String nombre, String domicilio, String rfc, String horario, boolean estaAbierto, int tipo,
+            String descripcion, String sitioWeb, String telefono, String correo) {
         this.nombre = nombre;
         this.domicilio = domicilio;
         this.rfc = rfc;
@@ -29,50 +31,55 @@ public class Restaurante {
         this.sitioWeb = sitioWeb;
         this.telefono = telefono;
         this.correo = correo;
-        inicializarDatos();
+        cAlimentos = 0;
     }
 
-    private void inicializarDatos(){
-        alimentos[0] = new Alimento("Comida 1", 200, "te lo puedes comer", 30, true, 3);
-        alimentos[1] = new Alimento("Comida 2", 200, "te lo puedes comer", 30, true, 3);
-        alimentos[2] = new Alimento("Comida 3", 200, "te lo puedes comer", 30, true, 3);
-        alimentos[3] = new Alimento("Comida 4", 200, "te lo puedes comer", 30, true, 3);
-        alimentos[4] = new Alimento("Comida 5", 200, "te lo puedes comer", 30, true, 3);
-        cAlimentos = 5;
-    }
-    public void mostrar(){
-      System.out.println(" - - - - Mostrar Restaurante - - - - ");
-      System.out.println("Nombre          : " + nombre);
-      System.out.println("Domicilio       : " + domicilio);
-      System.out.println("RFC             : " + rfc);
-      System.out.println("Horario         : " + horario);
-      System.out.println("Esta abierto?   : " + estaAbierto);
-      System.out.println("Tipo            : " + tipo);
-      System.out.println("Descripcion     : " + descripcion);
-      System.out.println("Sitio Web       : " + sitioWeb);
-      System.out.println("Telefono        : " + telefono);
-      System.out.println("Correo          : " + correo);
-      System.out.println("Menu            : ");
-      mostrarAlimentos();
+    public void mostrar() {
+        System.out.println(" - - - - Mostrar Restaurante - - - - ");
+        System.out.println("Nombre          : " + nombre);
+        System.out.println("Domicilio       : " + domicilio);
+        System.out.println("RFC             : " + rfc);
+        System.out.println("Horario         : " + horario);
+        System.out.println("Esta abierto?   : " + estaAbierto);
+        System.out.println("Tipo            : " + tipo);
+        System.out.println("Descripcion     : " + descripcion);
+        System.out.println("Sitio Web       : " + sitioWeb);
+        System.out.println("Telefono        : " + telefono);
+        System.out.println("Correo          : " + correo);
     }
 
-    public void capturar(){
-      Scanner read = new Scanner(System.in);
-      System.out.println(" - - - - Capturar Restaurante - - - - ");
-      System.out.print("Nombre          : "); nombre = read.nextLine();
-      System.out.print("Domicilio       : "); domicilio = read.nextLine();
-      System.out.print("RFC             : "); rfc = read.nextLine();
-      System.out.print("Horario         : "); horario = read.nextLine();
-      System.out.print("Esta abierto?   : "); estaAbierto = read.nextBoolean();
-      System.out.print("Tipo            : "); tipo = read.nextInt();
-      System.out.print("Descripcion     : "); descripcion = read.nextLine();
-      System.out.print("Sitio Web       : "); sitioWeb = read.nextLine();
-      System.out.print("Telefono        : "); telefono = read.nextLine();
-      System.out.print("Correo          : "); correo = read.nextLine();
-      read.close();
+    public void capturar() {
+        Scanner read = new Scanner(System.in);
+        System.out.println(" - - - - Capturar Restaurante - - - - ");
+        System.out.print("Nombre          : ");
+        nombre = read.nextLine();
+        System.out.print("Domicilio       : ");
+        domicilio = read.nextLine();
+        System.out.print("RFC             : ");
+        rfc = read.nextLine();
+        System.out.print("Horario         : ");
+        horario = read.nextLine();
+        System.out.print("Esta abierto?   : ");
+        estaAbierto = read.nextBoolean();
+        System.out.print("Tipo            : ");
+        tipo = read.nextInt();
+        System.out.print("Descripcion     : ");
+        descripcion = read.nextLine();
+        System.out.print("Sitio Web       : ");
+        sitioWeb = read.nextLine();
+        System.out.print("Telefono        : ");
+        telefono = read.nextLine();
+        System.out.print("Correo          : ");
+        correo = read.nextLine();
+        read.close();
     }
 
-    public void mostrarAlimentos(){
+    public void agregarAlimento(String nombre, float precio, String descripcion, int tiempo, boolean estaDisponible,
+            int tipo) {
+        alimentos[cAlimentos++] = new Alimento(nombre, precio, descripcion, tiempo, estaDisponible, tipo);
+    }
+
+    public void mostrarAlimentos() {
         for (int i = 0; i <= cAlimentos; i++) {
             if (alimentos[i] != null) {
                 alimentos[i].mostrar();
