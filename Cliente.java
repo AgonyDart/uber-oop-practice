@@ -1,19 +1,14 @@
-
 import java.util.Scanner;
 
-public class Cliente {
+
+public class Cliente extends Persona{
 
     private double saldo;
     private String municipio;
     private String codigoPostal;
 
     public Cliente(String nombreCompleto, String domicilio, String telefono, String correo, char sexo, String fechaNacimiento, double saldo, String municipio, String codigoPostal) {
-        this.nombreCompleto = nombreCompleto;
-        this.domicilio = domicilio;
-        this.telefono = telefono;
-        this.correo = correo;
-        this.sexo = sexo;
-        this.fechaNacimiento = fechaNacimiento;
+        super(nombreCompleto, telefono, domicilio, correo, sexo, fechaNacimiento);
         this.saldo = saldo;
         this.municipio = municipio;
         this.codigoPostal = codigoPostal;
@@ -22,23 +17,27 @@ public class Cliente {
     public Cliente() {
     }
 
+    @Override
     public void mostrar() {
         System.out.println(" - - - - Mostrar Cliente - - - - ");
+        super.mostrar();
         System.out.println("Saldo                : " + saldo);
         System.out.println("Municipio            : " + municipio);
         System.out.println("Codigo Postal        : " + codigoPostal);
     }
 
+    @Override
     public void capturar() {
         Scanner read = new Scanner(System.in);
         System.out.println(" - - - - Capturar Cliente - - - - ");
-        System.out.println("Saldo                : ");
+        super.capturar();
+        System.out.print("Saldo                : ");
         saldo = read.nextDouble();
-        System.out.println("Municipio            : ");
+        System.out.print("Municipio            : ");
         municipio = read.nextLine();
-        System.out.println("Codigo Postal        : ");
+        municipio = read.nextLine();
+        System.out.print("Codigo Postal        : ");
         codigoPostal = read.nextLine();
-        read.close();
     }
 
     public String getNombreCompleto() {

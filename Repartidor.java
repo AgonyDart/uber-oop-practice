@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class Repartidor {
+public class Repartidor extends Persona{
 
     private String rfc;
 
@@ -12,17 +12,12 @@ public class Repartidor {
     private boolean estaDisponible;
 
     public Repartidor(String telefono, String nombreCompleto, String rfc, String correo, char tipoVehiculo, String numeroLicencia, String descripcionVehiculo, String domicilio, String cuentaBancaria, String fechaNacimiento, char sexo, boolean estaDisponible) {
-        this.telefono = telefono;
-        this.nombreCompleto = nombreCompleto;
+        super(nombreCompleto, telefono, domicilio, correo, sexo, fechaNacimiento);
         this.rfc = rfc;
-        this.correo = correo;
         this.tipoVehiculo = tipoVehiculo;
         this.numeroLicencia = numeroLicencia;
         this.descripcionVehiculo = descripcionVehiculo;
-        this.domicilio = domicilio;
         this.cuentaBancaria = cuentaBancaria;
-        this.fechaNacimiento = fechaNacimiento;
-        this.sexo = sexo;
         this.estaDisponible = estaDisponible;
     }
 
@@ -32,8 +27,10 @@ public class Repartidor {
         this.estaDisponible = false;
     }
 
+    @Override
     public void mostrar() {
         System.out.println(" - - - - Mostrar Repartidor - - - - ");
+        super.mostrar();
         System.out.println("RFC                  : " + rfc);
         System.out.println("Tipo de Vehículo     : " + tipoVehiculo);
         System.out.println("Núm. de Licencia     : " + numeroLicencia);
@@ -42,9 +39,11 @@ public class Repartidor {
         System.out.println("¿Disponible?         : " + estaDisponible);
     }
 
+    @Override
     public void capturar() {
         Scanner read = new Scanner(System.in);
         System.out.println(" - - - - Capturar Repartidor - - - - ");
+        super.capturar();
         System.out.print("RFC                  : ");
         rfc = read.nextLine();
         System.out.print("Tipo de Vehículo     : ");
@@ -57,7 +56,6 @@ public class Repartidor {
         cuentaBancaria = read.nextLine();
         System.out.print("¿Disponible?         : ");
         estaDisponible = read.nextBoolean();
-        read.close();
     }
 
     public String getTelefono() {
