@@ -14,6 +14,8 @@ public class Restaurante {
     private String correo;
     private Alimento alimentos[] = new Alimento[15];
     private int cAlimentos;
+    private Propietario propietarios[] = new Propietario[10];
+    private int cPropietarios;
 
     public Restaurante() {
     }
@@ -84,6 +86,59 @@ public class Restaurante {
                 alimentos[i].mostrar();
             }
         }
+    }
+
+    public void mostrarAlimento(String string) {
+        String textForSearching;
+        Alimento a;
+        for (int i = 0; i < cAlimentos; i++) {
+            a = alimentos[i];
+            textForSearching = a.getNombre() + String.valueOf(a.getPrecio()) + a.getDescripcion();
+            if (textForSearching.contains(string)) {
+                alimentos[i].mostrar();
+            }
+            textForSearching = "";
+        }
+    }
+
+    public void capturarAlimento() {
+        alimentos[cAlimentos] = new Alimento();
+        alimentos[cAlimentos].capturar();
+        cAlimentos++;
+    }
+
+    public void agregarPropietario(String nombreCompleto, String telefono, String domicilio, String correo, char sexo,
+            String fechaNacimiento, String rfc, String id, String ocupacion, String cuentaBancaria) {
+        propietarios[cPropietarios++] = new Propietario(nombreCompleto, telefono, domicilio, correo, sexo,
+                fechaNacimiento, rfc, id, ocupacion, cuentaBancaria);
+    }
+
+    public void mostrarPropietario() {
+        for (int i = 0; i <= cPropietarios; i++) {
+            if (propietarios[i] != null) {
+                propietarios[i].mostrar();
+            }
+        }
+    }
+
+    public void mostrarPropietario(String string) {
+        String textForSearching;
+        Propietario a;
+        for (int i = 0; i < cPropietarios; i++) {
+            a = propietarios[i];
+            textForSearching = a.getNombreCompleto() + a.getTelefono() + a.getDomicilio() + a.getCorreo() + a.getSexo()
+                    + a.getFechaNacimiento() + a.getRfc() + a.getId() + a.getOcupacion() + a.getCuentaBancaria();
+            if (textForSearching.contains(string)) {
+                propietarios[i].mostrar();
+            }
+            textForSearching = "";
+        }
+    }
+
+    public void capturarProietario() {
+        propietarios[cPropietarios] = new Propietario();
+        propietarios[cPropietarios].capturar();
+        cPropietarios++;
     }
 
     public String getNombre() {

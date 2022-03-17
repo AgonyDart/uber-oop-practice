@@ -65,14 +65,18 @@ public class Uber {
         "03-03-11", 1500, "Morelia", "58337");
     cClientes = 10;
     restaurantes[0] = new Restaurante("McDonalds", "Villa Siempreviva, #123",
-    "MCDS030322-xxx", "11:00-9:00", true, 1, "hamburguesas", "https://www.mcdonalds.com.mx/",
-    "123456789", "mccorreo@gmail.com");
-    restaurantes[1] = new Restaurante("Carnitas La Luz", "Teniente Coronel Juan Pablo Aldasoro 35, Jardines de Guadalupe, 58140 Morelia, Mich.",
-    "CALL030322-xxx", "10:00 - 2:00", false, 5, "tacos de tortilla", "https://restaurantguru.com/Carnitas-La-Luz-Morelia",
-    "443 334 0424", "carnitasbienricas@gmail.com");
-    restaurantes[2] = new Restaurante("China Town", "C. Juan Guillermo Villasana 164, Jardines de Guadalupe, 58140 Morelia, Mich.",
-    "CHTW030322-xxx", "12:00 - 6:00", true, 3, "china number one", "https://foursquare.com/v/china-town/4ed7e8c761afca7b26035db6",
-    "443 257 0653", "chinese@gmail.com");
+        "MCDS030322-xxx", "11:00-9:00", true, 1, "hamburguesas", "https://www.mcdonalds.com.mx/",
+        "123456789", "mccorreo@gmail.com");
+    restaurantes[1] = new Restaurante("Carnitas La Luz",
+        "Teniente Coronel Juan Pablo Aldasoro 35, Jardines de Guadalupe, 58140 Morelia, Mich.",
+        "CALL030322-xxx", "10:00 - 2:00", false, 5, "tacos de tortilla",
+        "https://restaurantguru.com/Carnitas-La-Luz-Morelia",
+        "443 334 0424", "carnitasbienricas@gmail.com");
+    restaurantes[2] = new Restaurante("China Town",
+        "C. Juan Guillermo Villasana 164, Jardines de Guadalupe, 58140 Morelia, Mich.",
+        "CHTW030322-xxx", "12:00 - 6:00", true, 3, "china number one",
+        "https://foursquare.com/v/china-town/4ed7e8c761afca7b26035db6",
+        "443 257 0653", "chinese@gmail.com");
     cRestaurantes = 3;
     restaurantes[0].agregarAlimento("hamburguesa 1", 200, "queso bien rico", 10, true, 2);
     restaurantes[0].agregarAlimento("hamburguesa 2", 300, "carne bien rica", 10, true, 3);
@@ -86,6 +90,11 @@ public class Uber {
     restaurantes[2].agregarAlimento("Not a dog", 20, "I wouldn't buy this", 10, true, 3);
     restaurantes[2].agregarAlimento("Bat soup", 999, "not again pls", 60, !true, 9);
     restaurantes[2].agregarAlimento("I swear is food", 60, "Sure it is :D", 5, true, 3);
+    restaurantes[0].agregarPropietario("Diego Contreras", "443 690 6066", "C.U.", "diegonicus@gmail.com", 'm', "30-03-03", "COTD030330-XXX", "0", "Licenciado", "1234-1234-1234-1234");
+    restaurantes[1].agregarPropietario("Carlos Gasca", "443 320 6066", "El pipila", "cgasca@gmail.com", 'f', "04-10-03", "GACC031004-XXX", "1", "Programador", "1234-1234-1234-1234");
+    restaurantes[1].agregarPropietario("Jasiel Huerta", "443 690 3245", "Por la pedregal", "jhuerta@gmail.com", 'm', "29-11-03", "HUMJ031129-XXX", "1", "Psicologo", "1234-1234-1234-1234");
+    restaurantes[2].agregarPropietario("Octavio Pena", "443 345 1230", "Villas del Sol", "octpen@gmail.com", 'm', "16-04-03", "PEXO030416-XXX", "2", "Contador", "1234-1234-1234-1234");
+    restaurantes[2].agregarPropietario("Valeria Bocanegra", "443 435 1234", "Casa 2", "valbocng@gmail.com", 'f', "01-07-03", "BOVD030701-XXX", "2", "Futbolista", "1234-1234-1234-1234");
   }
 
   public void mostrarRepartidores() {
@@ -201,11 +210,69 @@ public class Uber {
   }
 
   public void mostrarAlimentos() {
-    for (int i = 0; i <= cRestaurantes; i++) {
-      if (restaurantes[i] != null) {
-        restaurantes[i].mostrarAlimento();
+    Scanner read = new Scanner(System.in);
+    System.out.println("Quieres mostrar todos los elementos?\n1. Si       2. No");
+    if (read.nextInt() == 1) {
+      for (int i = 0; i <= cRestaurantes; i++) {
+        if (restaurantes[i] != null) {
+          restaurantes[i].mostrarAlimento();
+        }
+      }
+    } else {
+      System.out.println("Seleccionar el numero de restaurante a mostrar alimentos (1-3)");
+      int option = read.nextInt();
+      if (restaurantes[option] != null) {
+        restaurantes[option].mostrarAlimento();
       }
     }
+  }
+
+  public void mostrarAlimentos(String string) {
+    for (int i = 0; i < cRestaurantes; i++) {
+      if (restaurantes[i] != null) {
+        restaurantes[i].mostrarAlimento(string);
+      }
+    }
+  }
+
+  public void capturarAlimentos() {
+    System.out.println("Para que restaurante quieres capturarlo? (1-3)");
+    Scanner read = new Scanner(System.in);
+    int option = read.nextInt();
+    restaurantes[option].capturarAlimento();
+  }
+
+  public void mostrarPropietarios() {
+    Scanner read = new Scanner(System.in);
+    System.out.println("Quieres mostrar todos los elementos?\n1. Si       2. No");
+    if (read.nextInt() == 1) {
+      for (int i = 0; i <= cRestaurantes; i++) {
+        if (restaurantes[i] != null) {
+          restaurantes[i].mostrarPropietario();
+        }
+      }
+    } else {
+      System.out.println("Seleccionar el numero de restaurante a mostrar propietarios (1-3)");
+      int option = read.nextInt();
+      if (restaurantes[option] != null) {
+        restaurantes[option].mostrarPropietario();
+      }
+    }
+  }
+
+  public void mostrarPropietarios(String string) {
+    for (int i = 0; i < cRestaurantes; i++) {
+      if (restaurantes[i] != null) {
+        restaurantes[i].mostrarPropietario(string);
+      }
+    }
+  }
+
+  public void capturarProietarios() {
+    System.out.println("Para que restaurante quieres capturarlo? (1-3)");
+    Scanner read = new Scanner(System.in);
+    int option = read.nextInt();
+    restaurantes[option].capturarProietario();
   }
 
   public String getRfc() {

@@ -22,11 +22,12 @@ public class App {
 					break;
 				case 13:
 					search = read.nextLine();
-					if (isNumeric(search)) {
-						uberEats.mostrarRepartidores(Integer.parseInt(search));
-					} else {
-						uberEats.mostrarRepartidores(search);
-					}
+					uberEats.mostrarRepartidores(search);
+					// if (isNumeric(search)) {
+					// 	uberEats.mostrarRepartidores(Integer.parseInt(search));
+					// } else {
+					// 	uberEats.mostrarRepartidores(search);
+					// }
 					break;
 				case 21:
 					uberEats.mostrarClientes();
@@ -36,11 +37,12 @@ public class App {
 					break;
 				case 23:
 					search = read.nextLine();
-					if (isNumeric(search)) {
-						uberEats.mostrarClientes(Integer.parseInt(search));
-					} else {
-						uberEats.mostrarClientes(search);
-					}
+					uberEats.mostrarClientes(search);
+					// if (isNumeric(search)) {
+					// 	uberEats.mostrarClientes(Integer.parseInt(search));
+					// } else {
+					// 	uberEats.mostrarClientes(search);
+					// }
 					break;
 				case 31:
 					uberEats.mostrarRestaurantes();
@@ -53,6 +55,23 @@ public class App {
 					break;
 				case 34:
 					uberEats.mostrarAlimentos();
+					break;
+				case 35:
+					uberEats.capturarAlimentos();
+					break;
+				case 36:
+					System.out.print("Introduce la cadena de texto a buscar : ");
+					uberEats.mostrarAlimentos(read.nextLine());
+					break;
+				case 37:
+					uberEats.mostrarPropietarios();
+					break;
+				case 38:
+					uberEats.capturarProietarios();
+					break;
+				case 39:
+					System.out.print("Introduce la cadena de texto a buscar : ");
+					uberEats.mostrarPropietarios(read.nextLine());
 					break;
 				case 0:
 					return;
@@ -68,7 +87,7 @@ public class App {
 			return opcion;
 		}
 		if (opcion == 3) {
-			System.out.println("1.- Mostrar		2.- Capturar	     3.- Buscar		4.-Mostrar alimentos		0.- Cancelar");
+			System.out.println("1.- Mostrar		2.- Capturar		3.- Buscar			4.-Mostrar alimentos\n5. Capturar alimento	6. Buscar alimento	7. Mostrar propietario		8. Capturar propietario\n9. Buscar propietario	0.- Cancelar");
 			opcion = opcion * 10 + read.nextInt();
 		} else {
 			System.out.println("1.- Mostrar		2.- Capturar		3. Buscar		0.-Cancelar");
@@ -80,6 +99,7 @@ public class App {
 		return opcion;
 	}
 
+	//  Metodo de apoyo para la funcion de mostrar solo cierto numero de repartidores, clientes, etc, hasta el siguiente 'enter'
 	private static boolean isNumeric(String string) {
 		try {
 			Integer.parseInt(string);

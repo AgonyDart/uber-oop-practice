@@ -1,7 +1,7 @@
 
 import java.util.Scanner;
 
-public class Repartidor extends Persona{
+public class Repartidor extends Persona {
 
     private String rfc;
 
@@ -11,7 +11,9 @@ public class Repartidor extends Persona{
     private String cuentaBancaria;
     private boolean estaDisponible;
 
-    public Repartidor(String telefono, String nombreCompleto, String rfc, String correo, char tipoVehiculo, String numeroLicencia, String descripcionVehiculo, String domicilio, String cuentaBancaria, String fechaNacimiento, char sexo, boolean estaDisponible) {
+    public Repartidor(String telefono, String nombreCompleto, String rfc, String correo, char tipoVehiculo,
+            String numeroLicencia, String descripcionVehiculo, String domicilio, String cuentaBancaria,
+            String fechaNacimiento, char sexo, boolean estaDisponible) {
         super(nombreCompleto, telefono, domicilio, correo, sexo, fechaNacimiento);
         this.rfc = rfc;
         this.tipoVehiculo = tipoVehiculo;
@@ -153,5 +155,4 @@ public class Repartidor extends Persona{
     public void setEstaDisponible(boolean estaDisponible) {
         this.estaDisponible = estaDisponible;
     }
-
 }

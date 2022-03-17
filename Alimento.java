@@ -32,7 +32,7 @@ public class Alimento {
     }
 
     public void capturar() {
-        System.out.print(" - - - - Capturar Alimento - - - - ");
+        System.out.println(" - - - - Capturar Alimento - - - - ");
         Scanner read = new Scanner(System.in);
         System.out.print("Nombre : ");
         nombre = read.nextLine();
@@ -40,13 +40,13 @@ public class Alimento {
         precio = read.nextFloat();
         System.out.print("Descripcion : ");
         descripcion = read.nextLine();
+        descripcion = read.nextLine();
         System.out.print("Tiempo : ");
         tiempo = read.nextInt();
         System.out.print("Esta Disponible? : ");
         estaDisponible = read.nextBoolean();
         System.out.print("Tipo : ");
         tipo = read.nextInt();
-        read.close();
     }
 
     public String getNombre() {
