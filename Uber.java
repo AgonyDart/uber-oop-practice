@@ -219,7 +219,7 @@ public class Uber {
         }
       }
     } else {
-      System.out.println("Seleccionar el numero de restaurante a mostrar alimentos (1-3)");
+      System.out.println("Seleccionar el numero de restaurante a mostrar alimentos (0-2)");
       int option = read.nextInt();
       if (restaurantes[option] != null) {
         restaurantes[option].mostrarAlimento();
@@ -236,7 +236,7 @@ public class Uber {
   }
 
   public void capturarAlimentos() {
-    System.out.println("Para que restaurante quieres capturarlo? (1-3)");
+    System.out.println("Para que restaurante quieres capturarlo? (0-2)");
     Scanner read = new Scanner(System.in);
     int option = read.nextInt();
     restaurantes[option].capturarAlimento();
@@ -252,7 +252,7 @@ public class Uber {
         }
       }
     } else {
-      System.out.println("Seleccionar el numero de restaurante a mostrar propietarios (1-3)");
+      System.out.println("Seleccionar el numero de restaurante a mostrar propietarios (0-2)");
       int option = read.nextInt();
       if (restaurantes[option] != null) {
         restaurantes[option].mostrarPropietario();
@@ -269,7 +269,7 @@ public class Uber {
   }
 
   public void capturarProietarios() {
-    System.out.println("Para que restaurante quieres capturarlo? (1-3)");
+    System.out.println("Para que restaurante quieres capturarlo? (0-2)");
     Scanner read = new Scanner(System.in);
     int option = read.nextInt();
     restaurantes[option].capturarProietario();
