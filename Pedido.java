@@ -28,7 +28,12 @@ public class Pedido {
     }
 
     public Pedido(){
-      
+
+    }
+
+    public void mostrar(){
+    System.out.println(" - - - - Mostrar Pedido - - - -");
+    System.out.print("");  
     }
 
     public String getTelefonoCliente() {
