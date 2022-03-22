@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Pedido {
   private String telefonoCliente;
   private String rfcRestaurante;
@@ -32,8 +34,48 @@ public class Pedido {
     }
 
     public void mostrar(){
-    System.out.println(" - - - - Mostrar Pedido - - - -");
-    System.out.print("");  
+      System.out.println(" - - - - Mostrar Pedido - - - -");
+      System.out.print("Telefono del Cliente  : " + telefonoCliente);
+      System.out.print("RFC del Restaurante   : " + rfcRestaurante);
+      System.out.print("Domiclio del Cliente  : " + domicilioPedido);
+      System.out.print("Folio del Pedido      : " + folio);
+      System.out.print("RFC del Repartidor    : " + rfcRepartidor);
+      System.out.print("Fecha                 : " + fecha);
+      System.out.print("Hora del Pedido       : " + hora);
+      System.out.print("Forma de pago         : (i) " + formaPago);
+      System.out.print("Status                : (i) " + status);
+      System.out.print("Costo del envio       : " + costoEnvio);
+      System.out.print("Calf. restaurante     : " + calificacionRestaurante);
+      System.out.print("Calf. repartidor      : " + calificacionRepartidor);
+    }
+
+    public void mostrar(){
+      Scanner read = new Scanner(System.in);
+      System.out.println(" - - - - Mostrar Pedido - - - -");
+      System.out.print("Telefono del Cliente  : ");
+      telefonoCliente = read.nextLine();
+      System.out.print("RFC del Restaurante   : ");
+      rfcRestaurante = read.nextLine();
+      System.out.print("Domiclio del Cliente  : ");
+      domicilioPedido = read.nextLine();
+      System.out.print("Folio del Pedido      : ");
+      folio = read.nextLine();
+      System.out.print("RFC del Repartidor    : ");
+      rfcRepartidor = read.nextLine();
+      System.out.print("Fecha                 : ");
+      fecha = read.nextLine();
+      System.out.print("Hora del Pedido       : ");
+      hora = read.nextLine();
+      System.out.print("Forma de pago         : (i) ");
+      formaPago = read.nextnextInt();
+      System.out.print("Status                : (i) ");
+      status = read.nextInt();
+      System.out.print("Costo del envio       : ");
+      costoEnvio = read.nextLine();
+      System.out.print("Calf. restaurante     : ");
+      calificacionRestaurante = read.nextLine();
+      System.out.print("Calf. repartidor      : ");
+      calificacionRepartidor= read.nextLine();
     }
 
     public String getTelefonoCliente() {
