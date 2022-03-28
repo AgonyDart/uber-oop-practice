@@ -29,7 +29,7 @@ public class Cliente extends Persona{
     @Override
     public void capturar() {
         Scanner read = new Scanner(System.in);
-        System.out.println(" - - - - Capturar Cliente - - - - ");
+        System.out.println(">> >> >> Capturar Cliente << << ");
         super.capturar();
         System.out.print("Saldo                : ");
         saldo = read.nextDouble();
@@ -38,6 +38,14 @@ public class Cliente extends Persona{
         municipio = read.nextLine();
         System.out.print("Codigo Postal        : ");
         codigoPostal = read.nextLine();
+    }
+
+    public void menuClientFormat() {
+      System.out.println("( << << Mostrar Cliente >> >> )");
+      System.out.println("Nombre      :" + super.getNombreCompleto());
+      System.out.println("Telefono    :" + super.getTelefono());
+      System.out.println("domicilio   :" + super.getDomicilio());
+      System.out.println();
     }
 
     public String getNombreCompleto() {

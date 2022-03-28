@@ -73,6 +73,12 @@ public class App {
 					System.out.print("Introduce la cadena de texto a buscar : ");
 					uberEats.mostrarPropietarios(read.nextLine());
 					break;
+				case 41:
+					uberEats.mostrarPedidos();
+					break;
+				case 42:
+					uberEats.capturarPedido();
+					break;
 				case 0:
 					return;
 			}
@@ -81,7 +87,7 @@ public class App {
 
 	public static int mostrarMenu() {
 		Scanner read = new Scanner(System.in);
-		System.out.println("1.- Repartidor		2.- Cliente		3.- Restaurante		0.- Salir");
+		System.out.println("1.- Repartidor		2.- Cliente		3.- Restaurante		4.Pedido		0.- Salir");
 		int opcion = read.nextInt();
 		if (opcion == 0) {
 			return opcion;

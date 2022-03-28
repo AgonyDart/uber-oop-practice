@@ -13,6 +13,8 @@ public class Pedido {
   private float costoEnvio;
   private int calificacionRestaurante;
   private int calificacionRepartidor;
+  private Detalle detalles[] = new Detalle[100];
+  private int cDetalles = 0;
 
     public Pedido(String telefonoCliente, String rfcRestaurante, String domicilioPedido, String folio, String rfcRepartidor, String fecha, String hora, int formaPago, int status, float costoEnvio, int calificacionRestaurante, int calificacionRepartidor) {
         this.telefonoCliente = telefonoCliente;
@@ -34,22 +36,22 @@ public class Pedido {
     }
 
     public void mostrar(){
-      System.out.println(" - - - - Mostrar Pedido - - - -");
-      System.out.print("Telefono del Cliente  : " + telefonoCliente);
-      System.out.print("RFC del Restaurante   : " + rfcRestaurante);
-      System.out.print("Domiclio del Cliente  : " + domicilioPedido);
-      System.out.print("Folio del Pedido      : " + folio);
-      System.out.print("RFC del Repartidor    : " + rfcRepartidor);
-      System.out.print("Fecha                 : " + fecha);
-      System.out.print("Hora del Pedido       : " + hora);
-      System.out.print("Forma de pago         : (i) " + formaPago);
-      System.out.print("Status                : (i) " + status);
-      System.out.print("Costo del envio       : " + costoEnvio);
-      System.out.print("Calf. restaurante     : " + calificacionRestaurante);
-      System.out.print("Calf. repartidor      : " + calificacionRepartidor);
+      System.out.println("( << << Mostrar Pedido >> >> )");
+      System.out.println("Telefono del Cliente  : " + telefonoCliente);
+      System.out.println("RFC del Restaurante   : " + rfcRestaurante);
+      System.out.println("Domiclio del Cliente  : " + domicilioPedido);
+      System.out.println("Folio del Pedido      : " + folio);
+      System.out.println("RFC del Repartidor    : " + rfcRepartidor);
+      System.out.println("Fecha                 : " + fecha);
+      System.out.println("Hora del Pedido       : " + hora);
+      System.out.println("Forma de pago         : (i) " + formaPago);
+      System.out.println("Status                : (i) " + status);
+      System.out.println("Costo del envio       : " + costoEnvio);
+      System.out.println("Calf. restaurante     : " + calificacionRestaurante);
+      System.out.println("Calf. repartidor      : " + calificacionRepartidor);
     }
 
-    public void mostrar(){
+    public void capturar() {
       Scanner read = new Scanner(System.in);
       System.out.println(" - - - - Mostrar Pedido - - - -");
       System.out.print("Telefono del Cliente  : ");
@@ -67,15 +69,35 @@ public class Pedido {
       System.out.print("Hora del Pedido       : ");
       hora = read.nextLine();
       System.out.print("Forma de pago         : (i) ");
-      formaPago = read.nextnextInt();
+      formaPago = read.nextInt();
       System.out.print("Status                : (i) ");
       status = read.nextInt();
       System.out.print("Costo del envio       : ");
-      costoEnvio = read.nextLine();
+      costoEnvio = read.nextFloat();
       System.out.print("Calf. restaurante     : ");
-      calificacionRestaurante = read.nextLine();
+      calificacionRestaurante = read.nextInt();
       System.out.print("Calf. repartidor      : ");
-      calificacionRepartidor= read.nextLine();
+      calificacionRepartidor= read.nextInt();
+    }
+
+    public void agregarDetalle(int cantidad, String producto, float precio, String indicacionesEspeciales) {
+      detalles[cDetalles++] = new Detalle(cantidad, producto, precio, indicacionesEspeciales);
+    }
+
+    public void mostrarDetalle() {
+      for (int i = 0; i < cDetalles; i++) {
+        if (detalles[i] != null) {
+          detalles[i].mostrar();
+        }
+      }
+    }
+
+    public void capturarDetalle() {
+      for (int i = 0; i < cDetalles; i++) {
+        if (detalles[i] != null) {
+          detalles[i].capturar();
+        }
+      }
     }
 
     public String getTelefonoCliente() {
