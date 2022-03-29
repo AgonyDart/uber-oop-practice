@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Persona {
+public abstract class Persona {
   protected String nombreCompleto;
   protected String telefono;
   protected String domicilio;
@@ -13,6 +13,8 @@ public class Persona {
   public Persona() {
 
   }
+
+  protected abstract String ksoi();
 
   public Persona(String nombreCompleto, String telefono, String domicilio, String correo, char sexo, String fechaNacimiento) {
     this.nombreCompleto = nombreCompleto;

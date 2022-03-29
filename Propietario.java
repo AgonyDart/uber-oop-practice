@@ -20,6 +20,11 @@ public class Propietario extends Persona {
   }
 
   @Override
+  public String ksoi() {
+    return "Propietario";
+  }
+
+  @Override
   public void mostrar() {
     System.out.println(" - - - - Mostrar Propietario - - - - ");
     super.mostrar();

@@ -97,97 +97,97 @@ public class Uber {
   }
 
   public void mostrarRepartidores() {
-    for (int i = 0; i < cRepartidores; i++) {
-      if (repartidores[i] != null) {
-        repartidores[i].mostrar();
+    for (int i = 0; i < cPersonas; i++) {
+      if (personas[i] != null && personas[i].ksoi().equals("Repartidor")) {
+        personas[i].mostrar();
       }
     }
   }
 
-  public void mostrarRepartidores(String string) {
-    String textForSearching;
-    Repartidor r;
-    for (int i = 0; i < cRepartidores; i++) {
-      r = repartidores[i];
-      textForSearching = r.getNombreCompleto() + r.getTelefono() + r.getRfc() + r.getCorreo() + r.getNumeroLicencia()
-          + r.getDescripcionVehiculo() + r.getDomicilio() + r.getCuentaBancaria() + r.getFechaNacimiento();
-      if (textForSearching.contains(string)) {
-        repartidores[i].mostrar();
-      }
-      textForSearching = "";
-    }
-  }
-
-  public void mostrarRepartidores(int lines) {
-    Scanner read = new Scanner(System.in);
-    for (int i = 0; i < cRepartidores;) {
-      for (int j = 0; j < lines; j++) {
-        if (repartidores[i] != null) {
-          repartidores[i].mostrar();
-          i++;
-        }
-      }
-      System.out.print("\nPresione 'Enter' para continuar : ");
-      read.nextLine();
-    }
-  }
-
-  public void capturarRepartidor() {
-    repartidores[cRepartidores] = new Repartidor();
-    repartidores[cRepartidores].capturar();
-    cRepartidores++;
-  }
+  // public void mostrarRepartidores(String string) {
+  //   String textForSearching;
+  //   Repartidor r;
+  //   for (int i = 0; i < cRepartidores; i++) {
+  //     r = repartidores[i];
+  //     textForSearching = r.getNombreCompleto() + r.getTelefono() + r.getRfc() + r.getCorreo() + r.getNumeroLicencia()
+  //         + r.getDescripcionVehiculo() + r.getDomicilio() + r.getCuentaBancaria() + r.getFechaNacimiento();
+  //     if (textForSearching.contains(string)) {
+  //       repartidores[i].mostrar();
+  //     }
+  //     textForSearching = "";
+  //   }
+  // }
+  //
+  // public void mostrarRepartidores(int lines) {
+  //   Scanner read = new Scanner(System.in);
+  //   for (int i = 0; i < cRepartidores;) {
+  //     for (int j = 0; j < lines; j++) {
+  //       if (repartidores[i] != null) {
+  //         repartidores[i].mostrar();
+  //         i++;
+  //       }
+  //     }
+  //     System.out.print("\nPresione 'Enter' para continuar : ");
+  //     read.nextLine();
+  //   }
+  // }
+  //
+  // public void capturarRepartidor() {
+  //   repartidores[cRepartidores] = new Repartidor();
+  //   repartidores[cRepartidores].capturar();
+  //   cRepartidores++;
+  // }
 
   public void mostrarClientes() {
-    for (int i = 0; i <= cClientes; i++) {
-      if (clientes[i] != null) {
-        clientes[i].mostrar();
+    for (int i = 0; i < cPersonas; i++) {
+      if (personas[i] != null && personas[i].ksoi().equals("Cliente")) {
+        personas[i].mostrar();
       }
     }
   }
 
-  public void menuClientsFormat() {
-    for (int i = 0; i <= cClientes; i++) {
-      if (clientes[i] != null) {
-        System.out.print(i + ".-  ");
-        clientes[i].menuClientFormat();
-      }
-    }
-  }
+  // public void menuclientsformat() {
+  //   for (int i = 0; i <= cclientes; i++) {
+  //     if (clientes[i] != null) {
+  //       system.out.print(i + ".-  ");
+  //       clientes[i].menuclientformat();
+  //     }
+  //   }
+  // }
 
-  public void mostrarClientes(String string) {
-    String textForSearching;
-    Cliente r;
-    for (int i = 0; i < cClientes; i++) {
-      r = clientes[i];
-      textForSearching = r.getNombreCompleto() + r.getTelefono() + r.getCorreo() + r.getDomicilio() + r.getSaldo()
-          + r.getFechaNacimiento() + r.getMunicipio() + r.getCodigoPostal();
-      if (textForSearching.contains(string)) {
-        clientes[i].mostrar();
-      }
-      textForSearching = "";
-    }
-  }
-
-  public void mostrarClientes(int lines) {
-    Scanner read = new Scanner(System.in);
-    for (int i = 0; i < cClientes;) {
-      for (int j = 0; j < lines; j++) {
-        if (clientes[i] != null) {
-          clientes[i].mostrar();
-          i++;
-        }
-      }
-      System.out.print("\nPresione 'Enter' para continuar : ");
-      read.nextLine();
-    }
-  }
-
-  public void capturarCliente() {
-    clientes[cClientes] = new Cliente();
-    clientes[cClientes].capturar();
-    cClientes++;
-  }
+  // public void mostrarClientes(String string) {
+  //   String textForSearching;
+  //   Cliente r;
+  //   for (int i = 0; i < cClientes; i++) {
+  //     r = clientes[i];
+  //     textForSearching = r.getNombreCompleto() + r.getTelefono() + r.getCorreo() + r.getDomicilio() + r.getSaldo()
+  //         + r.getFechaNacimiento() + r.getMunicipio() + r.getCodigoPostal();
+  //     if (textForSearching.contains(string)) {
+  //       clientes[i].mostrar();
+  //     }
+  //     textForSearching = "";
+  //   }
+  // }
+  //
+  // public void mostrarClientes(int lines) {
+  //   Scanner read = new Scanner(System.in);
+  //   for (int i = 0; i < cClientes;) {
+  //     for (int j = 0; j < lines; j++) {
+  //       if (clientes[i] != null) {
+  //         clientes[i].mostrar();
+  //         i++;
+  //       }
+  //     }
+  //     System.out.print("\nPresione 'Enter' para continuar : ");
+  //     read.nextLine();
+  //   }
+  // }
+  //
+  // public void capturarCliente() {
+  //   clientes[cClientes] = new Cliente();
+  //   clientes[cClientes].capturar();
+  //   cClientes++;
+  // }
 
   public void mostrarRestaurantes() {
     for (int i = 0; i <= cRestaurantes; i++) {
@@ -291,43 +291,43 @@ public class Uber {
     }
   }
 
-  public void capturarPedido() {
-    Scanner read = new Scanner(System.in);
-    System.out.println(">> >> Capturar Pedido << <<");
-    System.out.println("Telefono del Cliente  : ");
-    System.out.println("Por favor seleccione el cliente a tomar el telefono :         (PRESIONA ENTER PARA CONTINUAR)");
-    read.nextLine();
-    menuClientsFormat();
-    int telephoneSelected = read.nextInt();
-    String telefono = clientes[telephoneSelected].getTelefono();
-    System.out.print("RFC del Restaurante   : ");
-    String rfcRestaurante = read.nextLine();
-    rfcRestaurante = read.nextLine();
-    System.out.print("Domiclio del Cliente  : ");
-    menuClientsFormat();
-    int addressSelected = read.nextInt();
-    String Domiclio = clientes[addressSelected].getDomicilio();
-    System.out.print("Folio del Pedido      : ");
-    int folio = cPedidos++;
-    System.out.print("RFC del Repartidor    : ");
-    String rfcRepartidor = read.nextLine();
-    rfcRepartidor = read.nextLine();
-    System.out.print("Fecha                 : ");
-    String fecha = read.nextLine();
-    System.out.print("Hora del Pedido       : ");
-    String hora = read.nextLine();
-    System.out.println("Forma de pago         : (i) ");
-    System.out.print("1.- Efectivo    2.- Tarjeta");
-    int formaPago = read.nextInt();
-    System.out.print("Status                : (i) 1");
-    int status = 1;
-    System.out.print("Costo del envio       : ");
-    float costoEnvio = read.nextFloat();
-    System.out.print("Calf. restaurante     : ");
-    int calificacionRestaurante = read.nextInt();
-    System.out.print("Calf. repartidor      : ");
-    int calificacionRepartidor= read.nextInt();
-  }
+  // public void capturarPedido() {
+  //   Scanner read = new Scanner(System.in);
+  //   System.out.println(">> >> Capturar Pedido << <<");
+  //   System.out.println("Telefono del Cliente  : ");
+  //   System.out.println("Por favor seleccione el cliente a tomar el telefono :         (PRESIONA ENTER PARA CONTINUAR)");
+  //   read.nextLine();
+  //   menuClientsFormat();
+  //   int telephoneSelected = read.nextInt();
+  //   String telefono = clientes[telephoneSelected].getTelefono();
+  //   System.out.print("RFC del Restaurante   : ");
+  //   String rfcRestaurante = read.nextLine();
+  //   rfcRestaurante = read.nextLine();
+  //   System.out.print("Domiclio del Cliente  : ");
+  //   menuClientsFormat();
+  //   int addressSelected = read.nextInt();
+  //   String Domiclio = clientes[addressSelected].getDomicilio();
+  //   System.out.print("Folio del Pedido      : ");
+  //   int folio = cPedidos++;
+  //   System.out.print("RFC del Repartidor    : ");
+  //   String rfcRepartidor = read.nextLine();
+  //   rfcRepartidor = read.nextLine();
+  //   System.out.print("Fecha                 : ");
+  //   String fecha = read.nextLine();
+  //   System.out.print("Hora del Pedido       : ");
+  //   String hora = read.nextLine();
+  //   System.out.println("Forma de pago         : (i) ");
+  //   System.out.print("1.- Efectivo    2.- Tarjeta");
+  //   int formaPago = read.nextInt();
+  //   System.out.print("Status                : (i) 1");
+  //   int status = 1;
+  //   System.out.print("Costo del envio       : ");
+  //   float costoEnvio = read.nextFloat();
+  //   System.out.print("Calf. restaurante     : ");
+  //   int calificacionRestaurante = read.nextInt();
+  //   System.out.print("Calf. repartidor      : ");
+  //   int calificacionRepartidor= read.nextInt();
+  // }
 
   public String getRfc() {
     return rfc;

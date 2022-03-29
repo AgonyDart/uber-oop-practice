@@ -30,6 +30,11 @@ public class Repartidor extends Persona {
     }
 
     @Override
+    public String ksoi() {
+      return "Repartidor";
+    }
+
+    @Override
     public void mostrar() {
         System.out.println(" - - - - Mostrar Repartidor - - - - ");
         super.mostrar();

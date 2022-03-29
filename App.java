@@ -18,11 +18,11 @@ public class App {
 					uberEats.mostrarRepartidores();
 					break;
 				case 12:
-					uberEats.capturarRepartidor();
+					// uberEats.capturarRepartidor();
 					break;
 				case 13:
 					search = read.nextLine();
-					uberEats.mostrarRepartidores(search);
+					// uberEats.mostrarRepartidores(search);
 					// if (isNumeric(search)) {
 					// 	uberEats.mostrarRepartidores(Integer.parseInt(search));
 					// } else {
@@ -33,11 +33,11 @@ public class App {
 					uberEats.mostrarClientes();
 					break;
 				case 22:
-					uberEats.capturarCliente();
+					// uberEats.capturarCliente();
 					break;
 				case 23:
 					search = read.nextLine();
-					uberEats.mostrarClientes(search);
+					// uberEats.mostrarClientes(search);
 					// if (isNumeric(search)) {
 					// 	uberEats.mostrarClientes(Integer.parseInt(search));
 					// } else {
@@ -77,7 +77,7 @@ public class App {
 					uberEats.mostrarPedidos();
 					break;
 				case 42:
-					uberEats.capturarPedido();
+					// uberEats.capturarPedido();
 					break;
 				case 0:
 					return;

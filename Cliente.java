@@ -18,6 +18,11 @@ public class Cliente extends Persona{
     }
 
     @Override
+    public String ksoi() {
+      return "Cliente";
+    }
+
+    @Override
     public void mostrar() {
         System.out.println(" - - - - Mostrar Cliente - - - - ");
         super.mostrar();
