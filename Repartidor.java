@@ -30,7 +30,7 @@ public class Repartidor extends Persona {
     }
 
     @Override
-    public String ksoi() {
+    public String whatI() {
       return "Repartidor";
     }
 

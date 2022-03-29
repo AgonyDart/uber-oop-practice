@@ -14,7 +14,7 @@ public abstract class Persona {
 
   }
 
-  protected abstract String ksoi();
+  protected abstract String whatI();
 
   public Persona(String nombreCompleto, String telefono, String domicilio, String correo, char sexo, String fechaNacimiento) {
     this.nombreCompleto = nombreCompleto;

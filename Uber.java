@@ -60,7 +60,7 @@ public class Uber {
         "01-03-13", 200, "Tarimbaro", "58XXX");
     personas[19] = new Cliente("Damian Hernandez", "Villa magna #763", "43 127 4567", "damianhc@gmail.com", 'M',
         "03-03-11", 1500, "Morelia", "58337");
-    cPersonas = 10;
+    cPersonas = 19;
     restaurantes[0] = new Restaurante("McDonalds", "Villa Siempreviva, #123",
         "MCDS030322-xxx", "11:00-9:00", true, 1, "hamburguesas", "https://www.mcdonalds.com.mx/",
         "123456789", "mccorreo@gmail.com");
@@ -98,25 +98,25 @@ public class Uber {
 
   public void mostrarRepartidores() {
     for (int i = 0; i < cPersonas; i++) {
-      if (personas[i] != null && personas[i].ksoi().equals("Repartidor")) {
+      if (personas[i] != null && personas[i].whatI().equals("Repartidor")) {
         personas[i].mostrar();
       }
     }
   }
 
-  // public void mostrarRepartidores(String string) {
-  //   String textForSearching;
-  //   Repartidor r;
-  //   for (int i = 0; i < cRepartidores; i++) {
-  //     r = repartidores[i];
-  //     textForSearching = r.getNombreCompleto() + r.getTelefono() + r.getRfc() + r.getCorreo() + r.getNumeroLicencia()
-  //         + r.getDescripcionVehiculo() + r.getDomicilio() + r.getCuentaBancaria() + r.getFechaNacimiento();
-  //     if (textForSearching.contains(string)) {
-  //       repartidores[i].mostrar();
-  //     }
-  //     textForSearching = "";
-  //   }
-  // }
+  public void mostrarRepartidores(String string) {
+    String textForSearching;
+    Persona p;
+    for (int i = 0; i < cPersonas && personas[i].whatI().equals("Repartidor"); i++) {
+      Repartidor r = (Repartidor) personas[i];
+      textForSearching = r.getNombreCompleto() + r.getTelefono() + r.getRfc() + r.getCorreo() + r.getNumeroLicencia()
+          + r.getDescripcionVehiculo() + r.getDomicilio() + r.getCuentaBancaria() + r.getFechaNacimiento();
+      if (textForSearching.contains(string)) {
+        personas[i].mostrar();
+      }
+      textForSearching = "";
+    }
+  }
   //
   // public void mostrarRepartidores(int lines) {
   //   Scanner read = new Scanner(System.in);
@@ -131,16 +131,16 @@ public class Uber {
   //     read.nextLine();
   //   }
   // }
-  //
-  // public void capturarRepartidor() {
-  //   repartidores[cRepartidores] = new Repartidor();
-  //   repartidores[cRepartidores].capturar();
-  //   cRepartidores++;
-  // }
+  
+  public void capturarRepartidor() {
+    personas[cPersonas] = new Repartidor();
+    personas[cPersonas].capturar();
+    cPersonas++;
+  }
 
   public void mostrarClientes() {
     for (int i = 0; i < cPersonas; i++) {
-      if (personas[i] != null && personas[i].ksoi().equals("Cliente")) {
+      if (personas[i] != null && personas[i].whatI().equals("Cliente")) {
         personas[i].mostrar();
       }
     }
@@ -155,19 +155,19 @@ public class Uber {
   //   }
   // }
 
-  // public void mostrarClientes(String string) {
-  //   String textForSearching;
-  //   Cliente r;
-  //   for (int i = 0; i < cClientes; i++) {
-  //     r = clientes[i];
-  //     textForSearching = r.getNombreCompleto() + r.getTelefono() + r.getCorreo() + r.getDomicilio() + r.getSaldo()
-  //         + r.getFechaNacimiento() + r.getMunicipio() + r.getCodigoPostal();
-  //     if (textForSearching.contains(string)) {
-  //       clientes[i].mostrar();
-  //     }
-  //     textForSearching = "";
-  //   }
-  // }
+  public void mostrarClientes(String string) {
+    String textForSearching;
+    Persona p;
+    for (int i = 0; i < cPersonas && personas[i].whatI().equals("Cliente"); i++) {
+      Cliente c = (Cliente) personas[i];
+      textForSearching = c.getNombreCompleto() + c.getTelefono() + c.getCorreo() + c.getDomicilio() + c.getSaldo()
+          + c.getFechaNacimiento() + c.getMunicipio() + c.getCodigoPostal();
+      if (textForSearching.contains(string)) {
+        personas[i].mostrar();
+      }
+      textForSearching = "";
+    }
+  }
   //
   // public void mostrarClientes(int lines) {
   //   Scanner read = new Scanner(System.in);
@@ -183,11 +183,11 @@ public class Uber {
   //   }
   // }
   //
-  // public void capturarCliente() {
-  //   clientes[cClientes] = new Cliente();
-  //   clientes[cClientes].capturar();
-  //   cClientes++;
-  // }
+  public void capturarCliente() {
+    personas[cPersonas] = new Cliente();
+    personas[cPersonas].capturar();
+    cPersonas++;
+  }
 
   public void mostrarRestaurantes() {
     for (int i = 0; i <= cRestaurantes; i++) {

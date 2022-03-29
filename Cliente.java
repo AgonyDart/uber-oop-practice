@@ -18,7 +18,7 @@ public class Cliente extends Persona{
     }
 
     @Override
-    public String ksoi() {
+    public String whatI() {
       return "Cliente";
     }
 
