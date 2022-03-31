@@ -1,20 +1,18 @@
 import java.util.Scanner;
 
-public abstract class Persona {
+public abstract class Persona  implements Basics {
   protected String nombreCompleto;
   protected String telefono;
   protected String domicilio;
   protected String correo;
   protected char sexo;
   protected String fechaNacimiento;
-  // Borrar los atributos de Repartidor y Cliente Unidad 3, Herencia
-  // Datos protegidos y no privados;
 
   public Persona() {
 
   }
 
-  protected abstract String whatI();
+  public abstract String whatI();
 
   public Persona(String nombreCompleto, String telefono, String domicilio, String correo, char sexo, String fechaNacimiento) {
     this.nombreCompleto = nombreCompleto;

@@ -117,20 +117,6 @@ public class Uber {
       textForSearching = "";
     }
   }
-  //
-  // public void mostrarRepartidores(int lines) {
-  //   Scanner read = new Scanner(System.in);
-  //   for (int i = 0; i < cRepartidores;) {
-  //     for (int j = 0; j < lines; j++) {
-  //       if (repartidores[i] != null) {
-  //         repartidores[i].mostrar();
-  //         i++;
-  //       }
-  //     }
-  //     System.out.print("\nPresione 'Enter' para continuar : ");
-  //     read.nextLine();
-  //   }
-  // }
   
   public void capturarRepartidor() {
     personas[cPersonas] = new Repartidor();
@@ -146,19 +132,12 @@ public class Uber {
     }
   }
 
-  // public void menuclientsformat() {
-  //   for (int i = 0; i <= cclientes; i++) {
-  //     if (clientes[i] != null) {
-  //       system.out.print(i + ".-  ");
-  //       clientes[i].menuclientformat();
-  //     }
-  //   }
-  // }
-
   public void mostrarClientes(String string) {
     String textForSearching;
     Persona p;
+    // System.out.print("AQUI HAY SEXO");
     for (int i = 0; i < cPersonas && personas[i].whatI().equals("Cliente"); i++) {
+      System.out.print("AQUI HAY SEXO");
       Cliente c = (Cliente) personas[i];
       textForSearching = c.getNombreCompleto() + c.getTelefono() + c.getCorreo() + c.getDomicilio() + c.getSaldo()
           + c.getFechaNacimiento() + c.getMunicipio() + c.getCodigoPostal();
