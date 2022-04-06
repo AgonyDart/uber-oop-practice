@@ -16,7 +16,6 @@ public class Propietario extends Persona {
   }
 
   public Propietario() {
-
   }
 
   @Override

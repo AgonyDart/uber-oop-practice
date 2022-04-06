@@ -147,21 +147,7 @@ public class Uber {
       textForSearching = "";
     }
   }
-  //
-  // public void mostrarClientes(int lines) {
-  //   Scanner read = new Scanner(System.in);
-  //   for (int i = 0; i < cClientes;) {
-  //     for (int j = 0; j < lines; j++) {
-  //       if (clientes[i] != null) {
-  //         clientes[i].mostrar();
-  //         i++;
-  //       }
-  //     }
-  //     System.out.print("\nPresione 'Enter' para continuar : ");
-  //     read.nextLine();
-  //   }
-  // }
-  //
+
   public void capturarCliente() {
     personas[cPersonas] = new Cliente();
     personas[cPersonas].capturar();

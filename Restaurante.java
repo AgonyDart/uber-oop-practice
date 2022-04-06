@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Restaurante {
+public class Restaurante implements Basics {
 
     private String nombre;
     private String domicilio;
@@ -14,8 +14,6 @@ public class Restaurante {
     private String correo;
     private Alimento alimentos[] = new Alimento[15];
     private int cAlimentos;
-    private Propietario propietarios[] = new Propietario[10];
-    private int cPropietarios;
 
     public Restaurante() {
     }
@@ -33,6 +31,10 @@ public class Restaurante {
         this.telefono = telefono;
         this.correo = correo;
         cAlimentos = 0;
+    }
+
+    public String whatI() {
+        return "Restaurante";
     }
 
     public void mostrar() {

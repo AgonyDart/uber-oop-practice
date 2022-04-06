@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
-
 public class Cliente extends Persona{
-
     private double saldo;
     private String municipio;
     private String codigoPostal;
@@ -43,14 +41,6 @@ public class Cliente extends Persona{
         municipio = read.nextLine();
         System.out.print("Codigo Postal        : ");
         codigoPostal = read.nextLine();
-    }
-
-    public void menuClientFormat() {
-      System.out.println("( << << Mostrar Cliente >> >> )");
-      System.out.println("Nombre      :" + super.getNombreCompleto());
-      System.out.println("Telefono    :" + super.getTelefono());
-      System.out.println("domicilio   :" + super.getDomicilio());
-      System.out.println();
     }
 
     public String getNombreCompleto() {

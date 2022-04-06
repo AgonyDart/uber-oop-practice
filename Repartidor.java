@@ -1,10 +1,7 @@
-
 import java.util.Scanner;
 
 public class Repartidor extends Persona {
-
     private String rfc;
-
     private char tipoVehiculo;
     private String numeroLicencia;
     private String descripcionVehiculo;

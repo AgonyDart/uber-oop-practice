@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Pedido {
+public class Pedido implements Basics {
   private String telefonoCliente;
   private String rfcRestaurante;
   private String domicilioPedido;
@@ -32,7 +32,6 @@ public class Pedido {
     }
 
     public Pedido(){
-
     }
 
     public void mostrar(){

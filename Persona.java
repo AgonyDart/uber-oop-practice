@@ -1,15 +1,14 @@
 import java.util.Scanner;
 
-public abstract class Persona  implements Basics {
+public abstract class Persona implements Basics {
   protected String nombreCompleto;
+  protected char sexo;
+  protected String fechaNacimiento;
   protected String telefono;
   protected String domicilio;
   protected String correo;
-  protected char sexo;
-  protected String fechaNacimiento;
 
   public Persona() {
-
   }
 
   public abstract String whatI();
