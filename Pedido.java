@@ -104,6 +104,123 @@ public class Pedido implements Basics {
         calificacionRepartidor = read.nextInt();
     }
 
+    public void capturar(Persona[] personas, Restaurante[] restaurantes) {
+        Scanner read = new Scanner(System.in);
+        System.out.println("\n( >> >> Capturar Pedido << << )");
+        System.out.println("Telefono del Cliente  : ");
+        System.out.print("Desea ingresarlo manualmente?      1.- Si       2.- No\n> ");
+        int choice = read.nextInt();
+        if (choice == 1) {
+            System.out.println(">: ");
+            telefonoCliente = read.nextLine();
+            telefonoCliente = read.nextLine();
+        } else {
+            System.out.println();
+            Persona telefonos[] = new Persona[20];
+            for (int i = 0; i < personas.length; i++) {
+                int j = 0;
+                if (personas[i] != null && personas[i].whatI().equals("Cliente")) {
+                    System.out.println(i + ".- " + personas[i].getNombreCompleto() + ": " + personas[i].getTelefono());
+                    telefonos[j] = personas[i];
+                    j++;
+                }
+            }
+            System.out.print("\nPor favor seleccione el numero correspondiente al Cliente que quiere relacionar\n> ");
+            choice = read.nextInt();
+            telefonoCliente = telefonos[choice].getTelefono();
+        }
+        System.out.println("RFC del Restaurante   : ");
+        System.out.print("Desea ingresarlo manualmente?      1.- Si       2.- No\n> ");
+        choice = read.nextInt();
+        if (choice == 1) {
+            System.out.println(">: ");
+            rfcRestaurante = read.nextLine();
+            rfcRestaurante = read.nextLine();
+        } else {
+            System.out.println();
+            for (int i = 0; i < restaurantes.length; i++) {
+                if (restaurantes[i] != null) {
+                    System.out.println(i + ".- " + restaurantes[i].getNombre() + ": " + restaurantes[i].getRfc());
+                }
+            }
+            System.out
+                    .print("\nPor favor seleccione el numero correspondiente al Restaurante que quiere relacionar\n> ");
+            choice = read.nextInt();
+            rfcRestaurante = restaurantes[choice].getRfc();
+        }
+        System.out.println("Domiclio del Cliente  : ");
+        System.out.print("Desea ingresarlo manualmente?      1.- Si       2.- No\n> ");
+        choice = read.nextInt();
+        if (choice == 1) {
+            System.out.println(">: ");
+            domicilioPedido = read.nextLine();
+            domicilioPedido = read.nextLine();
+        } else {
+            System.out.println();
+            Persona domicilios[] = new Persona[20];
+            for (int i = 0; i < personas.length; i++) {
+                int j = 0;
+                if (personas[i] != null && personas[i].whatI().equals("Cliente")) {
+                    System.out.println(i + ".- " + personas[i].getNombreCompleto() + ": " + personas[i].getDomicilio());
+                    domicilios[j] = personas[i];
+                    j++;
+                }
+            }
+            System.out.print("\nPor favor seleccione el numero correspondiente al Cliente que quiere relacionar\n> ");
+            choice = read.nextInt();
+            domicilioPedido = domicilios[choice].getDomicilio();
+        }
+        System.out.println("Folio del Pedido      : ");
+        System.out.print("Desea ingresarlo manualmente?      1.- Si       2.- No\n> ");
+        choice = read.nextInt();
+        if (choice == 1) {
+            System.out.println(">: ");
+            folio = read.nextLine();
+            folio = read.nextLine();
+        } else {
+            System.out.println("\nAsignado automaticamente: " + cDetalles++);
+            folio = String.valueOf(cDetalles);
+        }
+        System.out.print("RFC del Repartidor    : ");
+        System.out.print("Desea ingresarlo manualmente?      1.- Si       2.- No\n> ");
+        choice = read.nextInt();
+        if (choice == 1) {
+            System.out.println(">: ");
+            rfcRepartidor = read.nextLine();
+            rfcRepartidor = read.nextLine();
+        } else {
+            System.out.println();
+            Repartidor rfcs[] = new Repartidor[20];
+            for (int i = 0; i < personas.length; i++) {
+                int j = 0;
+                if (personas[i] != null && personas[i].whatI().equals("Repartidor")) {
+                    Repartidor r = (Repartidor) personas[i];
+                    System.out.println(i + ".- " + r.getNombreCompleto() + ": " + r.getRfc());
+                    rfcs[j] = r;
+                    j++;
+                }
+            }
+            System.out.print("\nPor favor seleccione el numero correspondiente al Cliente que quiere relacionar\n> ");
+            choice = read.nextInt();
+            rfcRepartidor = rfcs[choice].getRfc();
+        }
+        System.out.print("Fecha                 : ");
+        fecha = read.nextLine();
+        fecha = read.nextLine();
+        System.out.print("Hora del Pedido       : ");
+        hora = read.nextLine();
+        System.out.print("Forma de pago         : (i)\n 1.- Efectivo\n 2.- Tarjeta\n>:");
+        formaPago = read.nextInt();
+        System.out.print("Status                : (i) ");
+        status = read.nextInt();
+        System.out.print("Costo del envio       : ");
+        costoEnvio = read.nextFloat();
+        System.out.print("Calf. restaurante     : ");
+        calificacionRestaurante = read.nextInt();
+        System.out.print("Calf. repartidor      : ");
+        calificacionRepartidor = read.nextInt();
+    }
+
     public void agregarDetalle(int cantidad, String producto, float precio, String indicacionesEspeciales) {
         detalles[cDetalles++] = new Detalle(cantidad, producto, precio, indicacionesEspeciales);
     }

@@ -61,6 +61,15 @@ public class App {
 					search = read.nextLine();
 					uberEats.mostrarAlimentos(search);
 					break;
+				case 51:
+					uberEats.mostrarPedidos();
+					break;
+				case 52:
+					uberEats.capturarPedido();
+					break;
+				case 51:
+					uberEats.mostrarPedidos();
+					break;
 				case 0:
 					return;
 			}

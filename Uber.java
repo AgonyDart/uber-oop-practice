@@ -258,6 +258,12 @@ public class Uber {
     }
   }
 
+  public void capturarPedido() {
+    pedidos[cPedidos] = new Restaurante();
+    pedidos[cPedidos].capturar();
+    cPedidos++;
+  }
+
   public String getRfc() {
     return rfc;
   }
