@@ -13,7 +13,8 @@ public abstract class Persona implements Basics {
 
   public abstract String whatI();
 
-  public Persona(String nombreCompleto, String telefono, String domicilio, String correo, char sexo, String fechaNacimiento) {
+  public Persona(String nombreCompleto, String telefono, String domicilio, String correo, char sexo,
+      String fechaNacimiento) {
     this.nombreCompleto = nombreCompleto;
     this.telefono = telefono;
     this.domicilio = domicilio;
@@ -23,75 +24,75 @@ public abstract class Persona implements Basics {
   }
 
   public void mostrar() {
-      System.out.println("Nombre               : " + nombreCompleto);
-      System.out.println("Telefono             : " + telefono);
-      System.out.println("Domiclio             : " + domicilio);
-      System.out.println("Correo               : " + correo);
-      System.out.println("Sexo                 : " + sexo);
-      System.out.println("Fecha de nacimiento  : " + fechaNacimiento);
+    System.out.println("Nombre               : " + nombreCompleto);
+    System.out.println("Telefono             : " + telefono);
+    System.out.println("Domiclio             : " + domicilio);
+    System.out.println("Correo               : " + correo);
+    System.out.println("Sexo                 : " + sexo);
+    System.out.println("Fecha de nacimiento  : " + fechaNacimiento);
   }
 
   public void capturar() {
-    Scanner read = new Scanner(System.in);
-    System.out.print("Nombre               : ");
-    nombreCompleto = read.nextLine();
-    System.out.print("Telefono             : ");
-    telefono = read.nextLine();
-    System.out.print("Domiclio             : ");
-    domicilio = read.nextLine();
-    System.out.print("Correo               : ");
-    correo = read.nextLine();
-    System.out.print("Sexo                 : ");
-    sexo = read.nextLine().charAt(0);
-    System.out.print("Fecha de nacimiento  : ");
-    fechaNacimiento = read.nextLine();
+      Scanner read = new Scanner(System.in);
+      System.out.print("Nombre               : ");
+      nombreCompleto = read.nextLine();
+      System.out.print("Telefono             : ");
+      telefono = read.nextLine();
+      System.out.print("Domiclio             : ");
+      domicilio = read.nextLine();
+      System.out.print("Correo               : ");
+      correo = read.nextLine();
+      System.out.print("Sexo                 : ");
+      sexo = read.nextLine().charAt(0);
+      System.out.print("Fecha de nacimiento  : ");
+      fechaNacimiento = read.nextLine();
   }
 
-  protected String getNombreCompleto(){
+  protected String getNombreCompleto() {
     return nombreCompleto;
   }
 
-  protected void setNombreCompleto(String nombreCompleto){
+  protected void setNombreCompleto(String nombreCompleto) {
     this.nombreCompleto = nombreCompleto;
   }
 
-  protected String getTelefono(){
+  protected String getTelefono() {
     return telefono;
   }
 
-  protected void setTelefono(String telefono){
+  protected void setTelefono(String telefono) {
     this.telefono = telefono;
   }
 
-  protected String getDomicilio(){
+  protected String getDomicilio() {
     return domicilio;
   }
 
-  protected void setDomicilio(String domicilio){
+  protected void setDomicilio(String domicilio) {
     this.domicilio = domicilio;
   }
 
-  protected String getCorreo(){
+  protected String getCorreo() {
     return correo;
   }
 
-  protected void setCorreo(String correo){
+  protected void setCorreo(String correo) {
     this.correo = correo;
   }
 
-  protected char getSexo(){
+  protected char getSexo() {
     return sexo;
   }
 
-  protected void setSexo(char sexo){
+  protected void setSexo(char sexo) {
     this.sexo = sexo;
   }
 
-  protected String getFechaNacimiento(){
+  protected String getFechaNacimiento() {
     return fechaNacimiento;
   }
 
-  protected void setFechaNacimiento(String fechaNacimiento){
+  protected void setFechaNacimiento(String fechaNacimiento) {
     this.fechaNacimiento = fechaNacimiento;
   }
 }

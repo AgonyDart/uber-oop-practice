@@ -6,5 +6,5 @@
 - Restaurante
 - Alimento
 
-# UML Diagrama 
-![diagrama](https://i.imgur.com/B2k2Dfa.jpg "diagrama")
+# UML Diagrama
+![diagrama](https://i.imgur.com/unnm76p.png "diagrama")

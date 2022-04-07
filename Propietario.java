@@ -25,7 +25,7 @@ public class Propietario extends Persona {
 
   @Override
   public void mostrar() {
-    System.out.println(" - - - - Mostrar Propietario - - - - ");
+    System.out.println("\n( << << Mostrar Propietario >> >> )");
     super.mostrar();
     System.out.println("RFC                  : " + rfc);
     System.out.println("Id                   : " + id);
@@ -36,7 +36,7 @@ public class Propietario extends Persona {
   @Override
   public void capturar() {
     Scanner read = new Scanner(System.in);
-    System.out.println(" - - - - Capturar Propietario - - - - ");
+    System.out.println("\n( >> >> Capturar Propietario << << )");
     super.capturar();
     System.out.print("RFC                  : ");
     rfc = read.nextLine();

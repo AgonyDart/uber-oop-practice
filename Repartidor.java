@@ -28,12 +28,12 @@ public class Repartidor extends Persona {
 
     @Override
     public String whatI() {
-      return "Repartidor";
+        return "Repartidor";
     }
 
     @Override
     public void mostrar() {
-        System.out.println(" - - - - Mostrar Repartidor - - - - ");
+        System.out.println("\n( << << Mostrar Repartidor >> >> )");
         super.mostrar();
         System.out.println("RFC                  : " + rfc);
         System.out.println("Tipo de Vehículo     : " + tipoVehiculo);
@@ -46,7 +46,7 @@ public class Repartidor extends Persona {
     @Override
     public void capturar() {
         Scanner read = new Scanner(System.in);
-        System.out.println(" - - - - Capturar Repartidor - - - - ");
+        System.out.println("\n( >> >> Capturar Repartidor << << )");
         super.capturar();
         System.out.print("RFC                  : ");
         rfc = read.nextLine();

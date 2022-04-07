@@ -1,11 +1,12 @@
 import java.util.Scanner;
 
-public class Cliente extends Persona{
+public class Cliente extends Persona {
     private double saldo;
     private String municipio;
     private String codigoPostal;
 
-    public Cliente(String nombreCompleto, String domicilio, String telefono, String correo, char sexo, String fechaNacimiento, double saldo, String municipio, String codigoPostal) {
+    public Cliente(String nombreCompleto, String domicilio, String telefono, String correo, char sexo,
+            String fechaNacimiento, double saldo, String municipio, String codigoPostal) {
         super(nombreCompleto, telefono, domicilio, correo, sexo, fechaNacimiento);
         this.saldo = saldo;
         this.municipio = municipio;
@@ -17,12 +18,12 @@ public class Cliente extends Persona{
 
     @Override
     public String whatI() {
-      return "Cliente";
+        return "Cliente";
     }
 
     @Override
     public void mostrar() {
-        System.out.println(" - - - - Mostrar Cliente - - - - ");
+        System.out.println("\n( << << Mostrar Cliente >> >> )");
         super.mostrar();
         System.out.println("Saldo                : " + saldo);
         System.out.println("Municipio            : " + municipio);
@@ -32,7 +33,7 @@ public class Cliente extends Persona{
     @Override
     public void capturar() {
         Scanner read = new Scanner(System.in);
-        System.out.println(">> >> >> Capturar Cliente << << ");
+        System.out.println("\n( >> >> Capturar Cliente << << )");
         super.capturar();
         System.out.print("Saldo                : ");
         saldo = read.nextDouble();

@@ -38,7 +38,7 @@ public class Restaurante implements Basics {
     }
 
     public void mostrar() {
-        System.out.println(" - - - - Mostrar Restaurante - - - - ");
+        System.out.println("\n( << << Mostrar Restaurante >> >> )");
         System.out.println("Nombre          : " + nombre);
         System.out.println("Domicilio       : " + domicilio);
         System.out.println("RFC             : " + rfc);
@@ -53,7 +53,7 @@ public class Restaurante implements Basics {
 
     public void capturar() {
         Scanner read = new Scanner(System.in);
-        System.out.println(" - - - - Capturar Restaurante - - - - ");
+        System.out.println("\n( >> >> Capturar Restaurante << << )");
         System.out.print("Nombre          : ");
         nombre = read.nextLine();
         System.out.print("Domicilio       : ");
@@ -74,7 +74,6 @@ public class Restaurante implements Basics {
         telefono = read.nextLine();
         System.out.print("Correo          : ");
         correo = read.nextLine();
-        read.close();
     }
 
     public void agregarAlimento(String nombre, float precio, String descripcion, int tiempo, boolean estaDisponible,
@@ -107,40 +106,6 @@ public class Restaurante implements Basics {
         alimentos[cAlimentos] = new Alimento();
         alimentos[cAlimentos].capturar();
         cAlimentos++;
-    }
-
-    public void agregarPropietario(String nombreCompleto, String telefono, String domicilio, String correo, char sexo,
-            String fechaNacimiento, String rfc, String id, String ocupacion, String cuentaBancaria) {
-        propietarios[cPropietarios++] = new Propietario(nombreCompleto, telefono, domicilio, correo, sexo,
-                fechaNacimiento, rfc, id, ocupacion, cuentaBancaria);
-    }
-
-    public void mostrarPropietario() {
-        for (int i = 0; i <= cPropietarios; i++) {
-            if (propietarios[i] != null) {
-                propietarios[i].mostrar();
-            }
-        }
-    }
-
-    public void mostrarPropietario(String string) {
-        String textForSearching;
-        Propietario a;
-        for (int i = 0; i < cPropietarios; i++) {
-            a = propietarios[i];
-            textForSearching = a.getNombreCompleto() + a.getTelefono() + a.getDomicilio() + a.getCorreo() + a.getSexo()
-                    + a.getFechaNacimiento() + a.getRfc() + a.getId() + a.getOcupacion() + a.getCuentaBancaria();
-            if (textForSearching.contains(string)) {
-                propietarios[i].mostrar();
-            }
-            textForSearching = "";
-        }
-    }
-
-    public void capturarProietario() {
-        propietarios[cPropietarios] = new Propietario();
-        propietarios[cPropietarios].capturar();
-        cPropietarios++;
     }
 
     public String getNombre() {
