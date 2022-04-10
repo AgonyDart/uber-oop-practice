@@ -35,6 +35,7 @@ public class Detalle implements Basics {
         cantidad = read.nextInt();
         System.out.print("Producto                  : ");
         producto = read.nextLine();
+        producto = read.nextLine();
         System.out.print("Precio                    : ");
         precio = read.nextFloat();
         System.out.print("Indicaciones Especiales   : ");

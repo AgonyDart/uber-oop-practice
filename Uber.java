@@ -20,10 +20,10 @@ public class Uber {
   }
 
   private void inicializarDatos() {
-    personas[0] = new Repartidor("443 173 9989", "Angel Duarte", "TIDA031201-xxx", "angelduarte@gmail.com", 'M',
-        "123456789", "honda cbf 125 twister", "17 de Marzo #149", "1234-1234-1234-1234", "12-03-01", 'M', true);
-    personas[1] = new Repartidor("443 106 3851", "David T.", "TIDA031201-xxx", "davidt@gmail.com", 'M', "123456789",
-        "honda cbt 250", "17 de Marzo #149", "1234-1234-1234-1234", "12-03-01", 'M', true);
+    personas[0] = new Repartidor("443 123 9989", "Angel Duarte", "TIDA031201-xxx", "angelduarte@gmail.com", 'M',
+        "123456789", "honda cbf 125 twister", "45 de Marzo #239", "1234-1234-1234-1234", "12-03-01", 'M', true);
+    personas[1] = new Repartidor("443 123 3851", "David T.", "TIDA031201-xxx", "davidt@gmail.com", 'M', "123456789",
+        "honda cbt 250", "123 de Marzo #12332", "1234-1234-1234-1234", "12-03-01", 'M', true);
     personas[2] = new Repartidor("443 234 4365", "Jared Monterrosa", "MOEE021019-xxx", "jaredmon@gmail.com", 'A',
         "123456789", "Mercedes-Benz. negro", "Av. ventura puente #788", "1234-1234-1234-1234", "10-02-19", 'M', false);
     personas[3] = new Repartidor("443 223 3645", "Leonardo Guido", "GUAL030730-xxx", "leonardoga@gmail.com", 'A',
@@ -40,11 +40,12 @@ public class Uber {
         "123456789", "roja", "Los Angeles, California", "1234-1234-1234-1234", "01-01-13", 'F', false);
     personas[9] = new Repartidor("443 677 6456", "Fatima Chavez", "CHPF010631-xxx", "fatimachavez@gmail.com", 'M',
         "123456789", "tiene 4 llantas", "CDMX, Av. Insurgentes #777", "1234-1234-1234-1234", "06-00-31", 'F', true);
-    personas[10] = new Cliente("Angel T.", "17 de Marzo #149", "443 173 9989", "angelt@gmail.com", 'M', "12-03-01", 200,
+    personas[10] = new Cliente("Angel T.", "412 de Marzo #213", "443 112 1223", "angelt@gmail.com", 'M', "12-03-01",
+        200,
         "Morelia", "58337");
-    personas[11] = new Cliente("David Duarte", "17 de Marzo #149", "443 106 3851", "davidduarte@gmail.com", 'M',
+    personas[11] = new Cliente("David Duarte", "12323 de Marzo #542", "443 123 3851", "davidduarte@gmail.com", 'M',
         "12-03-01", 250, "Morelia", "58337");
-    personas[12] = new Cliente("Fatima Chavez", "CDMX, Av. Insurgentes #777", "443 677 6456", "fatimachavez@gmail.com",
+    personas[12] = new Cliente("Fatima Chavez", "CDMX, Av. Insurgentes #777", "443 122 4324", "fatimachavez@gmail.com",
         'F', "06-00-31", 870, "CDMX", "34556");
     personas[13] = new Cliente("Jared Monterrosa", "Av. ventura puente #788", "443 234 4365", "jaredmon@gmail.com", 'M',
         "10-02-19", 1, "Tapachula", "69696");
@@ -70,7 +71,13 @@ public class Uber {
         "16-04-03", "PEXO030416-XXX", "2", "Contador", "1234-1234-1234-1234");
     personas[24] = new Propietario("Valeria Bocanegra", "443 435 1234", "Casa 2", "valbocng@gmail.com", 'f', "01-07-03",
         "BOVD030701-XXX", "2", "Futbolista", "1234-1234-1234-1234");
-    cPersonas = 25;
+    personas[25] = new Propietario("Robert S Costello", "440-614-9467", "2681 Bingamon Road", "kacie.schill@yahoo.com",
+        'm', "3/12/1985",
+        "COSR851203-XXX", "3", "Painter, Construction and Maintenance", "1234-1234-1234-1234");
+    personas[26] = new Propietario("Rebecca D Snell", "407-213-3671", "3373 Coolidge Street", "ocie1984@hotmail.com",
+        'f', "2/1/2001",
+        "SNDR010102-XXX", "4", "Broadcast Technician", "1234-1234-1234-1234");
+    cPersonas = 27;
     restaurantes[0] = new Restaurante("McDonalds", "Villa Siempreviva, #123",
         "MCDS030322-xxx", "11:00-9:00", true, 1, "hamburguesas", "https://www.mcdonalds.com.mx/",
         "123456789", "mccorreo@gmail.com");
@@ -84,7 +91,17 @@ public class Uber {
         "CHTW030322-xxx", "12:00 - 6:00", true, 3, "china number one",
         "https://foursquare.com/v/china-town/4ed7e8c761afca7b26035db6",
         "443 257 0653", "chinese@gmail.com");
-    cRestaurantes = 3;
+    restaurantes[3] = new Restaurante("Mos Eisley Cantina",
+        "Tatooine",
+        "MOEI458792-xxx", "12:00 - 23:00", false, 3, "Kylo Ren besto Sith",
+        "https://www.starwars.com/databank/mos-eisley-cantina",
+        "443 257 0653", "starwars@gmail.com");
+    restaurantes[4] = new Restaurante("Joe's Pizza",
+        "233 Bleecker Street",
+        "JOPI060801-xxx", "9:00 - 16:00", true, 4, "u'r late petter",
+        "https://spiderman-films.fandom.com/wiki/Joe%27s_Pizza",
+        "443 257 0653", "spiderpizza@gmail.com");
+    cRestaurantes = 5;
     restaurantes[0].agregarAlimento("hamburguesa 1", 200, "queso bien rico", 10, true, 2);
     restaurantes[0].agregarAlimento("hamburguesa 2", 300, "carne bien rica", 10, true, 3);
     restaurantes[0].agregarAlimento("hamburguesa 2.0", 400, "papas bien ricas", 10, true, 2);
@@ -97,9 +114,30 @@ public class Uber {
     restaurantes[2].agregarAlimento("Not a dog", 20, "I wouldn't buy this", 10, true, 3);
     restaurantes[2].agregarAlimento("Bat soup", 999, "not again pls", 60, !true, 9);
     restaurantes[2].agregarAlimento("I swear is food", 60, "Sure it is :D", 5, true, 3);
-    pedidos[0] = new Pedido("443-323-3141", "rfcRestaurante", "Av. Sur 5", "0", "rfcRepartidor", "24-03-2022", "08:07",
+    restaurantes[3].agregarAlimento("Peanut butter wookie", 1, "It's like a little chewy", 1, true, 4);
+    restaurantes[3].agregarAlimento("Boba fet burguer", 10, "Choice of burguer", 20, true, 5);
+    restaurantes[3].agregarAlimento("Spaceballs the slider", 4, "with Swarzbier BBQ sauce", 30, false, 2);
+    restaurantes[3].agregarAlimento("Ham solo", 1, "ham", 2, true, 4);
+    restaurantes[3].agregarAlimento("Mistery Galaxy", 10, "?", 15, true, 5);
+    restaurantes[4].agregarAlimento("Water Pizza", 5, "not what u thinkin", 20, true, 6);
+    restaurantes[4].agregarAlimento("Salad of Pizza", 60, "best salad ever", 15, false, 3);
+    restaurantes[4].agregarAlimento("Chicken Pizza", 60, "is this legal?", 35, true, 7);
+    restaurantes[4].agregarAlimento("Taco Pizza", 60, "Cielito lindo", 25, false, 1);
+    restaurantes[4].agregarAlimento("Viking Pizza", 60, "In the name of Ivar Lothbrok", 40, true, 2);
+    pedidos[0] = new Pedido("443-323-3141", "CALL030322", "Av. Sur 5", "0", "rfcRepartidor", "24-03-2022", "08:07",
         2, 4, 20, 5, 4);
-    cPedidos = 1;
+    pedidos[1] = new Pedido("443-323-3141", "JOPI060801", "746 Laurel Lane", "1", "rfcRepartidor", "23-03-2022", "18:07",
+        1, 3, 20, 5, 5);
+    pedidos[2] = new Pedido("443-323-3141", "MOEI458792", "694 Stark Hollow Road", "2", "rfcRepartidor", "21-02-2021", "08:17",
+        2, 1, 20, 5, 4);
+    pedidos[3] = new Pedido("443-323-3141", "CALL030322", "4144 Trails End Road", "3", "rfcRepartidor", "14-12-2021", "02:27",
+        1, 2, 20, 4, 5);
+    pedidos[4] = new Pedido("443-323-3141", "UIXS012302", "4154 Thomas Street", "4", "rfcRepartidor", "17-05-2022", "07:57",
+        2, 4, 20, 5, 5);
+    cPedidos = 5;
+    pedidos[0].agregarDetalle(3, "hamburguesa", 200, "sin cebolla");
+    pedidos[1].agregarDetalle(2, "tacos para el ingeniero", 60, "salsa de la que pica");
+    pedidos[2].agregarDetalle(1, "chine food", 45, "none");
   }
 
   public void mostrarRepartidores() {
@@ -227,7 +265,7 @@ public class Uber {
         }
       }
     } else {
-      System.out.println("Seleccionar el numero de restaurante a mostrar alimentos (0-2)");
+      System.out.println("Seleccionar el numero de restaurante a mostrar alimentos (0-4)");
       int option = read.nextInt();
       if (restaurantes[option] != null) {
         restaurantes[option].mostrarAlimento();
@@ -236,7 +274,7 @@ public class Uber {
   }
 
   public void capturarAlimento() {
-    System.out.println("Para que restaurante quieres capturarlo? (0-2)");
+    System.out.println("Para que restaurante quieres capturarlo? (0-4)");
     Scanner read = new Scanner(System.in);
     int option = read.nextInt();
     restaurantes[option].capturarAlimento();
@@ -254,14 +292,44 @@ public class Uber {
     for (int i = 0; i < cPedidos; i++) {
       if (pedidos[i] != null) {
         pedidos[i].mostrar();
+        pedidos[i].mostrarDetalle();
       }
     }
   }
 
   public void capturarPedido() {
-    pedidos[cPedidos] = new Restaurante();
-    pedidos[cPedidos].capturar();
+    pedidos[cPedidos] = new Pedido();
+    pedidos[cPedidos].capturar(personas, restaurantes);
     cPedidos++;
+  }
+
+  public void mostrarPedidos(String string) {
+    String textForSearching;
+    Pedido p;
+    for (int i = 0; i < cPedidos; i++) {
+      p = pedidos[i];
+      textForSearching = p.getTelefonoCliente() + p.getRfcRestaurante() + p.getDomicilioPedido() + p.getFolio()
+          + p.getRfcRepartidor() + p.getFecha() + p.getHora();
+      if (textForSearching.contains(string)) {
+        pedidos[i].mostrar();
+      }
+      textForSearching = "";
+    }
+  }
+
+  public void mostrarDetalles() {
+    for (int i = 0; i < cPedidos; i++) {
+      if (pedidos[i] != null) {
+        pedidos[i].mostrarDetalle();
+      }
+    }
+  }
+
+  public void capturarDetalle() {
+    System.out.println("Para que pedido quieres capturarlo? (0-4)");
+    Scanner read = new Scanner(System.in);
+    int option = read.nextInt();
+    pedidos[option].capturarDetalle();
   }
 
   public String getRfc() {

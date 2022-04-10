@@ -67,8 +67,15 @@ public class App {
 				case 52:
 					uberEats.capturarPedido();
 					break;
-				case 51:
-					uberEats.mostrarPedidos();
+				case 53:
+					search = read.nextLine();
+					uberEats.mostrarPedidos(search);
+					break;
+				case 54:
+					uberEats.mostrarDetalles();
+					break;
+				case 55:
+					uberEats.capturarDetalle();
 					break;
 				case 0:
 					return;
@@ -85,6 +92,9 @@ public class App {
 		}
 		if (opcion == 4) {
 			System.out.print("\n1.- Mostrar		2.- Capturar		3.- Buscar			4.-Mostrar alimentos\n5. Capturar alimento	6. Buscar alimento	0.- Cancelar\n> ");
+			opcion = opcion * 10 + read.nextInt();
+		} else if (opcion == 5) {
+			System.out.print("\n1.- Mostrar		2.- Capturar		3.- Buscar		4.-Mostrar detalles\n5. Capturar detalle	0.- Cancelar\n> ");
 			opcion = opcion * 10 + read.nextInt();
 		} else {
 			System.out.print("\n1.- Mostrar		2.- Capturar		3. Buscar		0.-Cancelar\n> ");
